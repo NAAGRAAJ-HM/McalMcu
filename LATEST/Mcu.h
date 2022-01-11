@@ -4,17 +4,17 @@
 
 class class_Mcu{
    public:
-      void InitFunction       (void);
-      void InitRamSection     (void);
-      void InitClock          (void);
-      void DistributePllClock (void);
-      void GetPllStatus       (void);
-      void GetResetReason     (void);
-      void GetResetRawValue   (void);
-      void PerformReset       (void);
-      void SetMode            (void);
-      void GetVersionInfo     (void);
-      void GetRamState        (void);
+      FUNC(void, MCU_CODE) InitFunction       (void);
+      FUNC(void, MCU_CODE) InitRamSection     (void);
+      FUNC(void, MCU_CODE) InitClock          (void);
+      FUNC(void, MCU_CODE) DistributePllClock (void);
+      FUNC(void, MCU_CODE) GetPllStatus       (void);
+      FUNC(void, MCU_CODE) GetResetReason     (void);
+      FUNC(void, MCU_CODE) GetResetRawValue   (void);
+      FUNC(void, MCU_CODE) PerformReset       (void);
+      FUNC(void, MCU_CODE) SetMode            (void);
+      FUNC(void, MCU_CODE) GetVersionInfo     (void);
+      FUNC(void, MCU_CODE) GetRamState        (void);
 };
 
 extern class_Mcu Mcu;
