@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Std_Types.h"
+#include "Compiler_Cfg_Mcu.h"
 
 class class_Mcu{
    public:
