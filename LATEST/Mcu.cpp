@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Mcu.h"
 
+#include "Mcu_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Mcu Mcu;
+class_Mcu_EcuM Mcu_EcuM;
+class_Mcu_EcuM *Mcu_EcuM_ptr = &Mcu_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, MCU_CODE) class_Mcu::InitFunction(void){
+FUNC(void, MCU_CODE) class_Mcu_EcuM::InitFunction(void){
 }
 
 FUNC(void, MCU_CODE) class_Mcu::InitRamSection(void){

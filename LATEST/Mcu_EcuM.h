@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : Mcu.h                                    */
+/* File   : Mcu_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_Mcu.h"
+
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,21 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Mcu{
+class class_Mcu_EcuM : public class_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, MCU_CODE) InitRamSection     (void);
-      FUNC(void, MCU_CODE) InitClock          (void);
-      FUNC(void, MCU_CODE) DistributePllClock (void);
-      FUNC(void, MCU_CODE) GetPllStatus       (void);
-      FUNC(void, MCU_CODE) GetResetReason     (void);
-      FUNC(void, MCU_CODE) GetResetRawValue   (void);
-      FUNC(void, MCU_CODE) PerformReset       (void);
-      FUNC(void, MCU_CODE) SetMode            (void);
-      FUNC(void, MCU_CODE) GetVersionInfo     (void);
-      FUNC(void, MCU_CODE) GetRamState        (void);
+      FUNC(void, MCU_CODE) InitFunction(void);
 };
 
 /*****************************************************/
@@ -49,7 +41,7 @@ class class_Mcu{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Mcu Mcu;
+extern class_Mcu_EcuM *Mcu_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */
