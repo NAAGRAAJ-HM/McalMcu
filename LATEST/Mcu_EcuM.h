@@ -41,7 +41,7 @@ class class_Mcu_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Mcu_EcuM *Mcu_EcuM_ptr;
+extern class_EcuM_Client *EcuM_Client_ptr_Mcu;
 
 /*****************************************************/
 /* EOF                                               */

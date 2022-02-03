@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Mcu Mcu;
 class_Mcu_EcuM Mcu_EcuM;
-class_Mcu_EcuM *Mcu_EcuM_ptr = &Mcu_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Mcu = &Mcu_EcuM;
+class_Mcu Mcu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
