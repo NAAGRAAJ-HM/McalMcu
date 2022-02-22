@@ -22,12 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Mcu_EcuM : public interface_EcuM_Client{
+class interface_Mcu_EcuM : public interface_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, MCU_CODE) InitFunction(void);
+      FUNC(void, MCU_CODE) InitFunction   (void);
+      FUNC(void, MCU_CODE) DeInitFunction (void);
 };
 
 /*****************************************************/
@@ -41,7 +42,7 @@ class class_Mcu_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_EcuM_Client *EcuM_Client_ptr_Mcu;
+extern interface_Mcu_EcuM *EcuM_Client_ptr_Mcu;
 
 /*****************************************************/
 /* EOF                                               */
