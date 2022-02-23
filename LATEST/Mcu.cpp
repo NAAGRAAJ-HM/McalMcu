@@ -31,6 +31,7 @@ class module_Mcu:
       FUNC(void, MCU_CODE) InitFunction   (void);
       FUNC(void, MCU_CODE) DeInitFunction (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
+      FUNC(void, MCU_CODE) GetResetReason (void);
 };
 
 /*****************************************************/
@@ -61,6 +62,9 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 }
 
+FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
+}
+
 FUNC(void, MCU_CODE) class_Mcu_Unused::InitRamSection(void){
 }
 
@@ -71,9 +75,6 @@ FUNC(void, MCU_CODE) class_Mcu_Unused::DistributePllClock(void){
 }
 
 FUNC(void, MCU_CODE) class_Mcu_Unused::GetPllStatus(void){
-}
-
-FUNC(void, MCU_CODE) class_Mcu_Unused::GetResetReason(void){
 }
 
 FUNC(void, MCU_CODE) class_Mcu_Unused::GetResetRawValue(void){
