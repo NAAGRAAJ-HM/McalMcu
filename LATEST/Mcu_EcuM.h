@@ -27,9 +27,9 @@ class interface_Mcu_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, MCU_CODE) InitFunction   (void);
-      FUNC(void, MCU_CODE) DeInitFunction (void);
-      FUNC(void, MCU_CODE) GetResetReason (void);
+      virtual FUNC(void, MCU_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, MCU_CODE) DeInitFunction (void) = 0;
+      virtual FUNC(void, MCU_CODE) GetResetReason (void) = 0;
 };
 
 /*****************************************************/
