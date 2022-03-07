@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Mcu:
       public abstract_module
-   ,  public interface_Mcu_EcuM
-   ,  public interface_Mcu_SchM
 {
    public:
       FUNC(void, MCU_CODE) InitFunction   (void);
@@ -45,10 +43,9 @@ class module_Mcu:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Mcu Mcu;
-
-interface_Mcu_EcuM *EcuM_Client_ptr_Mcu = &Mcu;
-interface_Mcu_SchM *SchM_Client_ptr_Mcu = &Mcu;
+module_Mcu     Mcu;
+infEcuMClient* gptrinfEcuMClient_Mcu = &Mcu;
+infSchMClient* gptrinfSchMClient_Mcu = &Mcu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

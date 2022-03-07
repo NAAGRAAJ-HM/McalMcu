@@ -9,8 +9,6 @@
 /*****************************************************/
 #include "Compiler_Cfg_Mcu.h"
 
-#include "EcuM_Client.h"
-
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -22,13 +20,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Mcu_EcuM : public interface_EcuM_Client{
+class interface_Mcu_EcuM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      virtual FUNC(void, MCU_CODE) InitFunction   (void) = 0;
-      virtual FUNC(void, MCU_CODE) DeInitFunction (void) = 0;
       virtual FUNC(void, MCU_CODE) GetResetReason (void) = 0;
 };
 
@@ -43,7 +39,8 @@ class interface_Mcu_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Mcu_EcuM *EcuM_Client_ptr_Mcu;
+extern infEcuMClient *gptrinfEcuMClient_Mcu;
+extern interface_Mcu_EcuM    *EcuM_Client_ptr_Mcu;
 
 /*****************************************************/
 /* EOF                                               */
