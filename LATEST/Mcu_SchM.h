@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Mcu_SchM *SchM_Client_ptr_Mcu;
+extern infSchMClient *gptrinfSchMClient_Mcu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
