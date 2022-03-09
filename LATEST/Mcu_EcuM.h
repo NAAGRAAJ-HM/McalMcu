@@ -20,7 +20,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Mcu_EcuM{
+class infMcu_EcuM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -39,8 +39,8 @@ class interface_Mcu_EcuM{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient *gptrinfEcuMClient_Mcu;
-extern interface_Mcu_EcuM    *EcuM_Client_ptr_Mcu;
+extern infEcuMClient* gptrinfEcuMClient_Mcu;
+extern infMcu_EcuM*   gptrinfMcu_EcuM;
 
 /*****************************************************/
 /* EOF                                               */

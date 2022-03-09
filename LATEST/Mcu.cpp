@@ -24,6 +24,7 @@
 /*****************************************************/
 class module_Mcu:
       public abstract_module
+   ,  public infMcu_EcuM
 {
    public:
       FUNC(void, MCU_CODE) InitFunction   (void);
@@ -46,6 +47,7 @@ class module_Mcu:
 module_Mcu     Mcu;
 infEcuMClient* gptrinfEcuMClient_Mcu = &Mcu;
 infSchMClient* gptrinfSchMClient_Mcu = &Mcu;
+infMcu_EcuM*   gptrinfMcu_EcuM       = &Mcu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

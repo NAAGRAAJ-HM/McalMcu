@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient *gptrinfSchMClient_Mcu;
+extern infSchMClient* gptrinfSchMClient_Mcu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
