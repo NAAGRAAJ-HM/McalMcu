@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Mcu_EcuM.h"
-#include "Mcu_SchM.h"
+#include "infMcu_EcuM.h"
+#include "infMcu_SchM.h"
 #include "Mcu_Unused.h"
 
 /*****************************************************/
@@ -29,6 +29,7 @@ class module_Mcu:
    public:
       FUNC(void, MCU_CODE) InitFunction   (void);
       FUNC(void, MCU_CODE) DeInitFunction (void);
+      FUNC(void, MCU_CODE) GetVersionInfo (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
       FUNC(void, MCU_CODE) GetResetReason (void);
 };
@@ -46,6 +47,7 @@ class module_Mcu:
 /*****************************************************/
 module_Mcu     Mcu;
 infEcuMClient* gptrinfEcuMClient_Mcu = &Mcu;
+infDcmClient*  gptrinfDcmClient_Mcu  = &Mcu;
 infSchMClient* gptrinfSchMClient_Mcu = &Mcu;
 infMcu_EcuM*   gptrinfMcu_EcuM       = &Mcu;
 
@@ -56,6 +58,9 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(void){
 }
 
 FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
+}
+
+FUNC(void, MCU_CODE) module_Mcu::GetVersionInfo(void){
 }
 
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
