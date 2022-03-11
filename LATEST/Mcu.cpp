@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infMcu_EcuM.h"
+#include "infMcu_Dcm.h"
 #include "infMcu_SchM.h"
-#include "Mcu_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -69,6 +69,8 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
 }
 
+#include "Mcu_Unused.h"
+
 FUNC(void, MCU_CODE) class_Mcu_Unused::InitRamSection(void){
 }
 
@@ -88,9 +90,6 @@ FUNC(void, MCU_CODE) class_Mcu_Unused::PerformReset(void){
 }
 
 FUNC(void, MCU_CODE) class_Mcu_Unused::SetMode(void){
-}
-
-FUNC(void, MCU_CODE) class_Mcu_Unused::GetVersionInfo(void){
 }
 
 FUNC(void, MCU_CODE) class_Mcu_Unused::GetRamState(void){
