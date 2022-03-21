@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infMcu_Version.h"
-
 #include "module.h"
+#include "infMcu_Version.h"
 #include "infMcu_EcuM.h"
 #include "infMcu_Dcm.h"
 #include "infMcu_SchM.h"
@@ -57,9 +56,11 @@ CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM       = &Mcu;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, MCU_CODE) module_Mcu::InitFunction(void){
+   Mcu.IsInitDone = E_OK;
 }
 
 FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
+   Mcu.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, MCU_CODE) module_Mcu::GetVersionInfo(void){
