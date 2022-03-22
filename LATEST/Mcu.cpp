@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infMcu_Version.h"
+#include "Mcu_Cfg.h"
 #include "infMcu_EcuM.h"
 #include "infMcu_Dcm.h"
 #include "infMcu_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define MCU_AR_RELEASE_MAJOR_VERSION                                           4
+#define MCU_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(MCU_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible MCU_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(MCU_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible MCU_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -64,6 +73,11 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
 }
 
 FUNC(void, MCU_CODE) module_Mcu::GetVersionInfo(void){
+#if(STD_ON == Mcu_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
