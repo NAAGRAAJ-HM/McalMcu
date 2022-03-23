@@ -42,6 +42,16 @@ class module_Mcu:
       FUNC(void, MCU_CODE) GetVersionInfo (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
       FUNC(void, MCU_CODE) GetResetReason (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, MCU_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
