@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Mcu_Cfg.h"
+#include "CfgMcu.h"
 #include "infMcu_EcuM.h"
 #include "infMcu_Dcm.h"
 #include "infMcu_SchM.h"
