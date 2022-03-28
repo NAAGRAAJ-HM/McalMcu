@@ -96,7 +96,18 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
 }
 
-#include "Mcu_Unused.hpp"
+class class_Mcu_Unused{
+   public:
+      FUNC(void, MCU_CODE) InitRamSection     (void);
+      FUNC(void, MCU_CODE) InitClock          (void);
+      FUNC(void, MCU_CODE) DistributePllClock (void);
+      FUNC(void, MCU_CODE) GetPllStatus       (void);
+      FUNC(void, MCU_CODE) GetResetReason     (void);
+      FUNC(void, MCU_CODE) GetResetRawValue   (void);
+      FUNC(void, MCU_CODE) PerformReset       (void);
+      FUNC(void, MCU_CODE) SetMode            (void);
+      FUNC(void, MCU_CODE) GetRamState        (void);
+};
 
 FUNC(void, MCU_CODE) class_Mcu_Unused::InitRamSection(void){
 }
