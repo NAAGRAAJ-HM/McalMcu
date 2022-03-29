@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgMcu.hpp"
 #include "infMcu_EcuM.hpp"
 #include "infMcu_Dcm.hpp"
 #include "infMcu_SchM.hpp"
@@ -37,39 +36,43 @@ class module_Mcu:
    ,  public infMcu_EcuM
 {
    public:
+      module_Mcu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, MCU_CODE) InitFunction   (void);
       FUNC(void, MCU_CODE) DeInitFunction (void);
-      FUNC(void, MCU_CODE) GetVersionInfo (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
-      FUNC(void, MCU_CODE) GetResetReason (void);
 
-   private:
-      CONST(Std_TypeVersionInfo, MCU_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
+      FUNC(void, MCU_CODE) GetResetReason (void);
 };
+
+extern VAR(module_Mcu, MCU_VAR) Mcu;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-
-/******************************************************************************/
-/* PARAMS                                                                     */
-/******************************************************************************/
-
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-VAR(module_Mcu, MCU_VAR) Mcu;
 CONSTP2VAR(infEcuMClient, MCU_VAR, MCU_CONST) gptrinfEcuMClient_Mcu = &Mcu;
 CONSTP2VAR(infDcmClient,  MCU_VAR, MCU_CONST) gptrinfDcmClient_Mcu  = &Mcu;
 CONSTP2VAR(infSchMClient, MCU_VAR, MCU_CONST) gptrinfSchMClient_Mcu = &Mcu;
 CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM       = &Mcu;
+
+/******************************************************************************/
+/* PARAMS                                                                     */
+/******************************************************************************/
+#include "CfgMcu.hpp"
+
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+VAR(module_Mcu, MCU_VAR) Mcu(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -80,14 +83,6 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(void){
 
 FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
    Mcu.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, MCU_CODE) module_Mcu::GetVersionInfo(void){
-#if(STD_ON == Mcu_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
