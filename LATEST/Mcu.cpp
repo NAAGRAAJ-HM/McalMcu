@@ -38,10 +38,9 @@ class module_Mcu:
    public:
       module_Mcu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, MCU_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, MCU_CODE) InitFunction   (void);
       FUNC(void, MCU_CODE) DeInitFunction (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
 
@@ -81,23 +80,39 @@ VAR(module_Mcu, MCU_VAR) Mcu(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, MCU_CODE) module_Mcu::InitFunction(
-   CONSTP2CONST(CfgMcu_Type, CFGMCU_CONFIG_DATA, CFGMCU_APPL_CONST) lptrCfgMcu
+   CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgMcu){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Mcu_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgMcu for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Mcu_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Mcu as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Mcu.IsInitDone = E_OK;
 }
 
 FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
-   Mcu.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Mcu_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
