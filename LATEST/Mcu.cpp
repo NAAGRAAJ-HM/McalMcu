@@ -82,6 +82,7 @@ VAR(module_Mcu, MCU_VAR) Mcu(
 FUNC(void, MCU_CODE) module_Mcu::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Mcu_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Mcu_DevErrorDetect)
       Det_ReportError(
@@ -89,6 +90,7 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Mcu_DevErrorDetect)
          Det_ReportError(
@@ -100,10 +102,13 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
 // use PBcfg_Mcu as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Mcu_InitCheck)
    }
+#endif
 }
 
 FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
+#if(STD_ON == Mcu_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Mcu_DevErrorDetect)
       Det_ReportError(
@@ -111,11 +116,26 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Mcu_InitCheck)
    }
+#endif
 }
 
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
+#if(STD_ON == Mcu_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Mcu_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Mcu_InitCheck)
+   }
+#endif
 }
 
 FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
