@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCU_AR_RELEASE_MAJOR_VERSION                                           4
-#define MCU_AR_RELEASE_MINOR_VERSION                                           3
+#define MCU_AR_RELEASE_VERSION_MAJOR                                           4
+#define MCU_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MCU_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible MCU_AR_RELEASE_MAJOR_VERSION!"
+#if(MCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible MCU_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(MCU_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible MCU_AR_RELEASE_MINOR_VERSION!"
+#if(MCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible MCU_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -67,8 +67,10 @@ CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM       = &Mcu;
 /******************************************************************************/
 VAR(module_Mcu, MCU_VAR) Mcu(
    {
-         0x0000
-      ,  0xFFFF
+         MCU_AR_RELEASE_VERSION_MAJOR
+      ,  MCU_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
