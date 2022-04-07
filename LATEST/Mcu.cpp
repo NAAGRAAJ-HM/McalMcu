@@ -105,8 +105,8 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgMcu;
          }
       }
       IsInitDone = E_OK;
