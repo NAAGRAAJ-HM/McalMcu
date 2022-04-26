@@ -31,9 +31,23 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Mcu_Functionality{
+   public:
+      FUNC(void, MCU_CODE) InitRamSection     (void);
+      FUNC(void, MCU_CODE) InitClock          (void);
+      FUNC(void, MCU_CODE) DistributePllClock (void);
+      FUNC(void, MCU_CODE) GetPllStatus       (void);
+      FUNC(void, MCU_CODE) GetResetReason     (void);
+      FUNC(void, MCU_CODE) GetResetRawValue   (void);
+      FUNC(void, MCU_CODE) PerformReset       (void);
+      FUNC(void, MCU_CODE) SetMode            (void);
+      FUNC(void, MCU_CODE) GetRamState        (void);
+};
+
 class module_Mcu:
       public abstract_module
    ,  public infMcu_EcuM
+   ,  public class_Mcu_Functionality
 {
    public:
       module_Mcu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -88,6 +102,10 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Mcu_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -96,6 +114,10 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Mcu_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -120,6 +142,10 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Mcu_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -136,6 +162,10 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Mcu_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -149,41 +179,28 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
 }
 
-class class_Mcu_Unused{
-   public:
-      FUNC(void, MCU_CODE) InitRamSection     (void);
-      FUNC(void, MCU_CODE) InitClock          (void);
-      FUNC(void, MCU_CODE) DistributePllClock (void);
-      FUNC(void, MCU_CODE) GetPllStatus       (void);
-      FUNC(void, MCU_CODE) GetResetReason     (void);
-      FUNC(void, MCU_CODE) GetResetRawValue   (void);
-      FUNC(void, MCU_CODE) PerformReset       (void);
-      FUNC(void, MCU_CODE) SetMode            (void);
-      FUNC(void, MCU_CODE) GetRamState        (void);
-};
-
-FUNC(void, MCU_CODE) class_Mcu_Unused::InitRamSection(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::InitRamSection(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::InitClock(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::InitClock(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::DistributePllClock(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::DistributePllClock(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::GetPllStatus(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::GetPllStatus(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::GetResetRawValue(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::GetResetRawValue(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::PerformReset(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::PerformReset(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::SetMode(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::SetMode(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Unused::GetRamState(void){
+FUNC(void, MCU_CODE) class_Mcu_Functionality::GetRamState(void){
 }
 
 /******************************************************************************/
