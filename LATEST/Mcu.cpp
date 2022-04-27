@@ -31,19 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Mcu_Functionality{
-   public:
-      FUNC(void, MCU_CODE) InitRamSection     (void);
-      FUNC(void, MCU_CODE) InitClock          (void);
-      FUNC(void, MCU_CODE) DistributePllClock (void);
-      FUNC(void, MCU_CODE) GetPllStatus       (void);
-      FUNC(void, MCU_CODE) GetResetReason     (void);
-      FUNC(void, MCU_CODE) GetResetRawValue   (void);
-      FUNC(void, MCU_CODE) PerformReset       (void);
-      FUNC(void, MCU_CODE) SetMode            (void);
-      FUNC(void, MCU_CODE) GetRamState        (void);
-};
-
 class module_Mcu:
       public abstract_module
    ,  public infMcu_EcuM
