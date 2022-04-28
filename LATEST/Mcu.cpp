@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Mcu_core.hpp"
 #include "infMcu_EcuM.hpp"
 #include "infMcu_Dcm.hpp"
 #include "infMcu_SchM.hpp"
