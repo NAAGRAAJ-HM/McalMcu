@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgMcu.hpp"
 #include "Mcu_core.hpp"
-#include "infMcu_EcuM.hpp"
-#include "infMcu_Dcm.hpp"
-#include "infMcu_SchM.hpp"
+#include "infMcu.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -45,8 +44,7 @@ class module_Mcu:
       );
       FUNC(void, MCU_CODE) DeInitFunction (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
-
-      FUNC(void, MCU_CODE) GetResetReason (void);
+      MCU_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Mcu, MCU_VAR) Mcu;
@@ -62,7 +60,6 @@ CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM       = &Mcu;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgMcu.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
