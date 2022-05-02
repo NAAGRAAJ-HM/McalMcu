@@ -164,28 +164,28 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::InitRamSection(void){
+FUNC(void, MCU_CODE) module_Mcu::InitRamSection(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::InitClock(void){
+FUNC(void, MCU_CODE) module_Mcu::InitClock(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::DistributePllClock(void){
+FUNC(void, MCU_CODE) module_Mcu::DistributePllClock(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::GetPllStatus(void){
+FUNC(void, MCU_CODE) module_Mcu::GetPllStatus(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::GetResetRawValue(void){
+FUNC(void, MCU_CODE) module_Mcu::GetResetRawValue(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::PerformReset(void){
+FUNC(void, MCU_CODE) module_Mcu::PerformReset(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::SetMode(void){
+FUNC(void, MCU_CODE) module_Mcu::SetMode(void){
 }
 
-FUNC(void, MCU_CODE) class_Mcu_Functionality::GetRamState(void){
+FUNC(void, MCU_CODE) module_Mcu::GetRamState(void){
 }
 
 /******************************************************************************/
