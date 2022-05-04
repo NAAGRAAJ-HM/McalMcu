@@ -115,7 +115,7 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  MCU_E_UNINIT
       );
 #endif
    }
@@ -135,7 +135,7 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  MCU_E_UNINIT
       );
 #endif
    }
@@ -154,7 +154,7 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  MCU_E_UNINIT
       );
 #endif
    }
