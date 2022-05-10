@@ -91,7 +91,10 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Mcu_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -129,7 +132,10 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
 
 FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
 #if(STD_ON == Mcu_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Mcu_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -149,7 +155,10 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
 
 FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 #if(STD_ON == Mcu_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Mcu_InitCheck)
    }
