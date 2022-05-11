@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgMcu.hpp"
 #include "Mcu_core.hpp"
-#include "infMcu.hpp"
+#include "infMcu_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Mcu:
+   INTERFACES_EXPORTED_MCU
       public abstract_module
    ,  public infMcu_EcuM
    ,  public class_Mcu_Functionality
