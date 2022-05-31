@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Mcu:
-   INTERFACES_EXPORTED_MCU
+      INTERFACES_EXPORTED_MCU
       public abstract_module
    ,  public infMcu_EcuM
    ,  public class_Mcu_Functionality
