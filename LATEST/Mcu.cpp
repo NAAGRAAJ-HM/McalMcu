@@ -10,6 +10,7 @@
 #include "CfgMcu.hpp"
 #include "Mcu_core.hpp"
 #include "infMcu_Exp.hpp"
+#include "infMcu_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
