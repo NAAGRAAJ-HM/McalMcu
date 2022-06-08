@@ -76,7 +76,7 @@ CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM       = &Mcu;
 VAR(module_Mcu, MCU_VAR) Mcu(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "MCU";
 #else
 #endif
          MCU_AR_RELEASE_VERSION_MAJOR
