@@ -75,10 +75,6 @@ CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM       = &Mcu;
 /******************************************************************************/
 VAR(module_Mcu, MCU_VAR) Mcu(
    {
-#if(STD_ON == _ReSIM)
-         "Mcu",
-#else
-#endif
          MCU_AR_RELEASE_VERSION_MAJOR
       ,  MCU_AR_RELEASE_VERSION_MINOR
       ,  0x00
