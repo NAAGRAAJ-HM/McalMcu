@@ -132,7 +132,9 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
 #endif
 }
 
-FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
+FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(
+   void
+){
 #if(STD_ON == Mcu_InitCheck)
    if(
          E_OK
@@ -155,7 +157,9 @@ FUNC(void, MCU_CODE) module_Mcu::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
+FUNC(void, MCU_CODE) module_Mcu::MainFunction(
+   void
+){
 #if(STD_ON == Mcu_InitCheck)
    if(
          E_OK
@@ -177,31 +181,49 @@ FUNC(void, MCU_CODE) module_Mcu::MainFunction(void){
 #endif
 }
 
-FUNC(void, MCU_CODE) module_Mcu::GetResetReason(void){
+FUNC(void, MCU_CODE) module_Mcu::GetResetReason(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::InitRamSection(void){
+FUNC(void, MCU_CODE) module_Mcu::InitRamSection(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::InitClock(void){
+FUNC(void, MCU_CODE) module_Mcu::InitClock(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::DistributePllClock(void){
+FUNC(void, MCU_CODE) module_Mcu::DistributePllClock(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::GetPllStatus(void){
+FUNC(void, MCU_CODE) module_Mcu::GetPllStatus(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::GetResetRawValue(void){
+FUNC(void, MCU_CODE) module_Mcu::GetResetRawValue(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::PerformReset(void){
+FUNC(void, MCU_CODE) module_Mcu::PerformReset(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::SetMode(void){
+FUNC(void, MCU_CODE) module_Mcu::SetMode(
+   void
+){
 }
 
-FUNC(void, MCU_CODE) module_Mcu::GetRamState(void){
+FUNC(void, MCU_CODE) module_Mcu::GetRamState(
+   void
+){
 }
 
 /******************************************************************************/
