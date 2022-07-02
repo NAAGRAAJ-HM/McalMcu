@@ -84,12 +84,7 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgMcu;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Mcu_DevErrorDetect)
