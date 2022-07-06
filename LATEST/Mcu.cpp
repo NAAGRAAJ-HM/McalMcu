@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgMcu.hpp"
-#include "Mcu_core.hpp"
-#include "infMcu_Exp.hpp"
+#include "Mcu.hpp"
 #include "infMcu_Imp.hpp"
 
 /******************************************************************************/
@@ -32,27 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Mcu:
-      INTERFACES_EXPORTED_MCU
-      public abstract_module
-   ,  public infMcu_EcuM
-   ,  public class_Mcu_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, MCU_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCU_CODE) DeInitFunction (void);
-      FUNC(void, MCU_CODE) MainFunction   (void);
-      MCU_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Mcu, MCU_VAR) Mcu;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
