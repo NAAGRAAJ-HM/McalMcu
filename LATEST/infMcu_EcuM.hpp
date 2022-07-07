@@ -31,7 +31,6 @@ class infMcu_EcuM{
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-extern CONSTP2VAR(infEcuMClient, MCU_VAR, MCU_CONST) gptrinfEcuMClient_Mcu;
 extern CONSTP2VAR(infMcu_EcuM,   MCU_VAR, MCU_CONST) gptrinfMcu_EcuM;
 
 /******************************************************************************/
