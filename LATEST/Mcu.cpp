@@ -48,7 +48,8 @@ VAR(module_Mcu, MCU_VAR) Mcu;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, MCU_CODE) module_Mcu::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, MCU_CONST,       MCU_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Mcu_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Mcu_DevErrorDetect)

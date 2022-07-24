@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstMcu.hpp"
 #include "CfgMcu.hpp"
 #include "Mcu_core.hpp"
 #include "infMcu_Exp.hpp"
@@ -32,13 +33,15 @@ class module_Mcu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstMcu_Type* lptrConst = (ConstMcu_Type*)NULL_PTR;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
    public:
       FUNC(void, MCU_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, MCU_CONST,       MCU_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
       );
       FUNC(void, MCU_CODE) DeInitFunction (void);
       FUNC(void, MCU_CODE) MainFunction   (void);
