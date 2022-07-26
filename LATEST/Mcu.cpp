@@ -61,7 +61,7 @@ FUNC(void, MCU_CODE) module_Mcu::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstMcu_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
