@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCU_AR_RELEASE_VERSION_MAJOR                                           4
-#define MCU_AR_RELEASE_VERSION_MINOR                                           3
+#define MCALMCU_AR_RELEASE_VERSION_MAJOR                                           4
+#define MCALMCU_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible MCU_AR_RELEASE_VERSION_MAJOR!"
+#if(MCALMCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible MCALMCU_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(MCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible MCU_AR_RELEASE_VERSION_MINOR!"
+#if(MCALMCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible MCALMCU_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalMcu, MCU_VAR) McalMcu;
+VAR(module_McalMcu, MCALMCU_VAR) McalMcu;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCU_CODE) module_McalMcu::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, MCU_CONST,       MCU_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
+FUNC(void, MCALMCU_CODE) module_McalMcu::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALMCU_CONFIG_DATA, MCALMCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalMcu_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, MCU_CODE) module_McalMcu::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCU_E_UNINIT
+         ,  MCALMCU_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::DeInitFunction(
+FUNC(void, MCALMCU_CODE) module_McalMcu::DeInitFunction(
    void
 ){
 #if(STD_ON == McalMcu_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, MCU_CODE) module_McalMcu::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCU_E_UNINIT
+         ,  MCALMCU_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::MainFunction(
+FUNC(void, MCALMCU_CODE) module_McalMcu::MainFunction(
    void
 ){
 #if(STD_ON == McalMcu_InitCheck)
@@ -132,54 +132,54 @@ FUNC(void, MCU_CODE) module_McalMcu::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCU_E_UNINIT
+         ,  MCALMCU_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::GetResetReason(
+FUNC(void, MCALMCU_CODE) module_McalMcu::GetResetReason(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::InitRamSection(
+FUNC(void, MCALMCU_CODE) module_McalMcu::InitRamSection(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::InitClock(
+FUNC(void, MCALMCU_CODE) module_McalMcu::InitClock(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::DistributePllClock(
+FUNC(void, MCALMCU_CODE) module_McalMcu::DistributePllClock(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::GetPllStatus(
+FUNC(void, MCALMCU_CODE) module_McalMcu::GetPllStatus(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::GetResetRawValue(
+FUNC(void, MCALMCU_CODE) module_McalMcu::GetResetRawValue(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::PerformReset(
+FUNC(void, MCALMCU_CODE) module_McalMcu::PerformReset(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::SetMode(
+FUNC(void, MCALMCU_CODE) module_McalMcu::SetMode(
    void
 ){
 }
 
-FUNC(void, MCU_CODE) module_McalMcu::GetRamState(
+FUNC(void, MCALMCU_CODE) module_McalMcu::GetRamState(
    void
 ){
 }

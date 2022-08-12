@@ -1,16 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalMcu.hpp                                                           */
+/* File   : Template.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalMcu.hpp"
-#include "CfgMcalMcu.hpp"
-#include "McalMcu_core.hpp"
-#include "infMcalMcu_Exp.hpp"
+//#include "types.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -23,30 +20,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalMcu:
-      INTERFACES_EXMCALPORTED_MCALMCU
-      public abstract_module
-   ,  public infMcalMcu_ServiceEcuM
-   ,  public class_McalMcu_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalMcu_Type* lptrConst = (ConstMcalMcu_Type*)NULL_PTR;
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-   public:
-      FUNC(void, MCALMCU_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALMCU_CONFIG_DATA, MCALMCU_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALMCU_CODE) DeInitFunction (void);
-      FUNC(void, MCALMCU_CODE) MainFunction   (void);
-      MCALMCU_CORE_FUNCTIONALITIES
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -59,7 +32,32 @@ class module_McalMcu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalMcu, MCALMCU_VAR) McalMcu;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+extern void    Field_Wrt8all  (uint8 *reg, uint8 val);
+extern void    Field_Wrt8     (uint8 *reg, uint8 pos, uint8 msk, uint8 val);
+extern void    Field_Wrt16    (uint16 *reg, uint16 pos, uint16 msk, uint16 val);
+extern void    Field_Wrt32    (uint32 *reg, uint32 pos, uint32 msk, uint32 val);
+extern void    Field_Mod8     (uint8 *reg, uint8 pos, uint8 msk, uint8 val);
+extern void    Field_Mod16    (uint16 *reg, uint16 pos, uint16 msk, uint16 val);
+extern void    Field_Mod32    (uint32 *reg, uint32 pos, uint32 msk, uint32 val);
+extern void    Field_Inv8     (uint8 *reg, uint8 msk);
+extern void    Field_Inv16    (uint16 *reg, uint16 msk);
+extern void    Field_Inv32    (uint32 *reg, uint32 msk);
+extern void    Field_Clr8     (uint8 *reg, uint8 msk);
+extern void    Field_Clr16    (uint16 *reg, uint16 msk);
+extern void    Field_Clr32    (uint32 *reg, uint32 msk);
+extern uint8   u1_Field_Rd8   (const uint8 *reg, uint8 pos, uint8 msk);
+extern uint8   u1_Field_Rd16  (const uint16 *reg, uint16 pos, uint16 msk);
+extern uint8   u1_Field_Rd32  (const uint32 *reg, uint32 pos, uint32 msk);
+extern uint8   u8_Field_Rd8   (const uint8 *reg, uint8 pos, uint8 msk);
+extern uint8   u8_Field_Rd16  (const uint16 *reg, uint16 pos, uint16 msk);
+extern uint8   u8_Field_Rd32  (const uint32 *reg, uint32 pos, uint32 msk);
+extern uint16  u16_Field_Rd16 (const uint16 *reg, uint16 pos, uint16 msk);
+extern uint16  u16_Field_Rd32 (const uint32 *reg, uint32 pos, uint32 msk);
+extern uint32  u32_Field_Rd32 (const uint32 *reg, uint32 pos, uint32 msk);
 
 /******************************************************************************/
 /* EOF                                                                        */

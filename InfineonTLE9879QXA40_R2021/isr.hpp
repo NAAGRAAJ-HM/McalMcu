@@ -1,16 +1,12 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalMcu.hpp                                                           */
+/* File   : Template.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalMcu.hpp"
-#include "CfgMcalMcu.hpp"
-#include "McalMcu_core.hpp"
-#include "infMcalMcu_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -23,30 +19,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalMcu:
-      INTERFACES_EXPORTED_MCALMCU
-      public abstract_module
-   ,  public infMcalMcu_ServiceEcuM
-   ,  public class_McalMcu_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalMcu_Type* lptrConst = (ConstMcalMcu_Type*)NULL_PTR;
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-   public:
-      FUNC(void, MCALMCU_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALMCU_CONFIG_DATA, MCALMCU_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALMCU_CODE) DeInitFunction (void);
-      FUNC(void, MCALMCU_CODE) MainFunction   (void);
-      MCALMCU_CORE_FUNCTIONALITIES
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -59,7 +31,32 @@ class module_McalMcu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalMcu, MCALMCU_VAR) McalMcu;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+void GPT1_IRQHandler(void);
+void GPT2_IRQHandler(void);
+void ADC2_IRQHandler(void);
+void ADC1_IRQHandler(void);
+void CCU6SR0_IRQHandler(void);
+void CCU6SR1_IRQHandler(void);
+void CCU6SR2_IRQHandler(void);
+void CCU6SR3_IRQHandler(void);
+void SSC1_IRQHandler(void);
+void SSC2_IRQHandler(void);
+void UART1_IRQHandler(void);
+void UART2_IRQHandler(void);
+void EXINT0_IRQHandler(void);
+void EXINT1_IRQHandler(void);
+void BDRV_IRQHandler(void);
+void DMA_IRQHandler(void);
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void MemManage_Handler(void);
+void BusFault_Handler(void);
+void UsageFault_Handler(void);
+void SysTick_Handler(void);
 
 /******************************************************************************/
 /* EOF                                                                        */

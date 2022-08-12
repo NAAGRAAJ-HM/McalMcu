@@ -1,13 +1,16 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalMcu_ServiceEcuM.hpp                                                   */
+/* File   : McalMcu.hpp                                                           */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalMcu.hpp"
+#include "ConstMcalMcu.hpp"
+#include "CfgMcalMcu.hpp"
+#include "McalMcu_core.hpp"
+#include "infMcalMcu_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -20,12 +23,29 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class infMcalMcu_ServiceEcuM{
-   public:
+class module_McalMcu:
+      INTERFACES_EXPORTED_MCU
+      public abstract_module
+   ,  public infMcalMcu_ServiceEcuM
+   ,  public class_McalMcu_Functionality
+{
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+      const ConstMcalMcu_Type* lptrConst = (ConstMcalMcu_Type*)NULL_PTR;
+
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      virtual FUNC(void, MCALMCU_CODE) GetResetReason (void) = 0;
+   public:
+      FUNC(void, MCU_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCU_CONST,       MCU_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCU_CONFIG_DATA, MCU_APPL_CONST) lptrCfgModule
+      );
+      FUNC(void, MCU_CODE) DeInitFunction (void);
+      FUNC(void, MCU_CODE) MainFunction   (void);
+      MCU_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -39,6 +59,7 @@ class infMcalMcu_ServiceEcuM{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+extern VAR(module_McalMcu, MCU_VAR) McalMcu;
 
 /******************************************************************************/
 /* EOF                                                                        */
