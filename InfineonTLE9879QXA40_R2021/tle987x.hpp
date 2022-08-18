@@ -855,40 +855,44 @@ typedef struct{
 }ADC2_Type;
 
 typedef struct{
+   __IOM uint32_t ADC3_EN          : 1;
+   __IOM uint32_t ADC3_OFS_MEAS_EN : 1;
+   __IOM uint32_t ADC3_SOC         : 1;
+   __IM  uint32_t                  : 1;
+   __IM  uint32_t ADC3_EoC_STS     : 1;
+   __IM  uint32_t ADC34_DREQ_SEL   : 2;
+   __IM  uint32_t                  : 4;
+   __IOM uint32_t ADC34_REF_SEL    : 1;
+   __IOM uint32_t ADC3_OSR         : 4;
+   __IOM uint32_t ADC4_EN          : 1;
+   __IOM uint32_t ADC4_OFS_MEAS_EN : 1;
+   __IOM uint32_t ADC4_SOC         : 1;
+   __IM  uint32_t                  : 1;
+   __IM  uint32_t ADC4_EoC_STS     : 1;
+   __IOM uint32_t ADC34_EoC_CNT    : 2;
+   __IOM uint32_t ADC34_DITHEN     : 1;
+   __IOM uint32_t ADC34_DITHVAL    : 4;
+   __IOM uint32_t ADC4_OSR         : 4;
+}tCTRL_STS_bits;
 
-  union{
-    __IOM uint32_t reg;
+typedef union{
+   __IOM uint32_t reg;
+   tCTRL_STS_bits bit;
+}tCTRL_STS;
 
-    struct{
-      __IOM uint32_t ADC3_EN    : 1;
-      __IOM uint32_t ADC3_OFS_MEAS_EN : 1;
-      __IOM uint32_t ADC3_SOC   : 1;
-      __IM  uint32_t            : 1;
-      __IM  uint32_t ADC3_EoC_STS : 1;
-      __IM  uint32_t ADC34_DREQ_SEL : 2;
-      __IM  uint32_t            : 4;
-      __IOM uint32_t ADC34_REF_SEL : 1;
-      __IOM uint32_t ADC3_OSR   : 4;
-      __IOM uint32_t ADC4_EN    : 1;
-      __IOM uint32_t ADC4_OFS_MEAS_EN : 1;
-      __IOM uint32_t ADC4_SOC   : 1;
-      __IM  uint32_t            : 1;
-      __IM  uint32_t ADC4_EoC_STS : 1;
-      __IOM uint32_t ADC34_EoC_CNT : 2;
-      __IOM uint32_t ADC34_DITHEN : 1;
-      __IOM uint32_t ADC34_DITHVAL : 4;
-      __IOM uint32_t ADC4_OSR   : 4;
-    }bit;
-  }CTRL_STS;
+typedef struct{
+   __IM  uint32_t ADC3_RESU  : 16;
+   __IM  uint32_t ADC4_RESU  : 16;
+}tRESUbits;
 
-  union{
-    __IOM uint32_t reg;
+typedef union{
+   __IOM uint32_t reg;
+   tRESUbits      bit;
+}tRESU;
 
-    struct{
-      __IM  uint32_t ADC3_RESU  : 16;
-      __IM  uint32_t ADC4_RESU  : 16;
-    }bit;
-  }RESU;
+typedef struct{
+   tCTRL_STS CTRL_STS;
+   tRESU     RESU;
 }ADC34_Type;
 
 typedef struct{
@@ -4748,29 +4752,29 @@ typedef struct{
 }UART_Type;
 
 
-extern ADC1_Type    *ADC1;
-extern ADC2_Type    *ADC2;
-extern ADC34_Type   *ADC34;
-extern BDRV_Type    *BDRV;
-extern CCU6_Type    *CCU6;
-extern CSA_Type     *CSA;
-extern CPU_Type     *CPU;
-extern DMA_Type     *DMA;
-extern GPT12E_Type  *GPT12E;
-extern LIN_Type     *LIN;
-extern MF_Type      *MF;
-extern MON_Type     *MON;
-extern PMU_Type     *PMU;
-extern PORT_Type    *PORT;
-extern SCU_Type     *SCU;
-extern SCUPM_Type   *SCUPM;
-extern SSC1_Type    *SSC1;
-extern SSC2_Type    *SSC2;
-extern TIMER2x_Type *TIMER2;
-extern TIMER2x_Type *TIMER21;
-extern TIMER3_Type  *TIMER3;
-extern UART_Type    *UART1;
-extern UART_Type    *UART2;
+extern ADC1_Type    ADC1;
+extern ADC2_Type    ADC2;
+extern ADC34_Type   ADC34;
+extern BDRV_Type    BDRV;
+extern CCU6_Type    CCU6;
+extern CSA_Type     CSA;
+extern CPU_Type     CPU;
+extern DMA_Type     DMA;
+extern GPT12E_Type  GPT12E;
+extern LIN_Type     LIN;
+extern MF_Type      MF;
+extern MON_Type     MON;
+extern PMU_Type     PMU;
+extern PORT_Type    PORT;
+extern SCU_Type     SCU;
+extern SCUPM_Type   SCUPM;
+extern SSC1_Type    SSC1;
+extern SSC2_Type    SSC2;
+extern TIMER2x_Type TIMER2;
+extern TIMER2x_Type TIMER21;
+extern TIMER3_Type  TIMER3;
+extern UART_Type    UART1;
+extern UART_Type    UART2;
 
 #define ADC1_CHx_EIM_TRIG_SEL_Pos         (16UL)
 #define ADC1_CHx_EIM_TRIG_SEL_Msk         (0x70000UL)

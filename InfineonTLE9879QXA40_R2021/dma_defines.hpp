@@ -19,7 +19,7 @@
 #define DMA_CH0_INC                                                        (0x0)
 #define DMA_CH0_NoOfTrans                                                  (0x1)
 #define DMA_CH0_SIZE                                                       (0x1)
-#define DMA_CH0_SRC                                           ADC1->RES_OUT0.reg
+#define DMA_CH0_SRC                                           ADC1.RES_OUT0.reg
 #define DMA_CH0_SRC_ADC1                                                   (0x0)
 #define DMA_CH0_SRC_EXT                                                    (0x0)
 #define DMA_CH0_SRC_PTR_OFFS                                               (0x0)
@@ -33,7 +33,7 @@
 #define DMA_CH10_INC                                                       (0x0)
 #define DMA_CH10_NoOfTrans                                                 (0x1)
 #define DMA_CH10_SIZE                                                      (0x1)
-#define DMA_CH10_SRC                                          ADC1->RES_OUT6.reg
+#define DMA_CH10_SRC                                          ADC1.RES_OUT6.reg
 #define DMA_CH10_SRC_EXT                                                   (0x0)
 #define DMA_CH10_SRC_PTR_OFFS                                              (0x0)
 #define DMA_CH10_SRC_SEL                                                   (0x0)
@@ -70,7 +70,7 @@
 #define DMA_CH1_INC                                                        (0x0)
 #define DMA_CH1_NoOfTrans                                                  (0x1)
 #define DMA_CH1_SIZE                                                       (0x1)
-#define DMA_CH1_SRC                                           ADC1->RES_OUT0.reg
+#define DMA_CH1_SRC                                           ADC1.RES_OUT0.reg
 #define DMA_CH1_SRC_ADC1                                                   (0x0)
 #define DMA_CH1_SRC_EXT                                                    (0x0)
 #define DMA_CH1_SRC_PTR_OFFS                                               (0x0)
@@ -110,7 +110,7 @@
 #define DMA_CH4_INC                                                        (0x0)
 #define DMA_CH4_NoOfTrans                                                  (0x1)
 #define DMA_CH4_SIZE                                                       (0x1)
-#define DMA_CH4_SRC                                           ADC1->RES_OUT0.reg
+#define DMA_CH4_SRC                                           ADC1.RES_OUT0.reg
 #define DMA_CH4_SRC_EXT                                                    (0x0)
 #define DMA_CH4_SRC_PTR_OFFS                                               (0x0)
 #define DMA_CH4_SRC_SEL                                                    (0x0)
@@ -123,7 +123,7 @@
 #define DMA_CH5_INC                                                        (0x0)
 #define DMA_CH5_NoOfTrans                                                  (0x1)
 #define DMA_CH5_SIZE                                                       (0x1)
-#define DMA_CH5_SRC                                           ADC1->RES_OUT1.reg
+#define DMA_CH5_SRC                                           ADC1.RES_OUT1.reg
 #define DMA_CH5_SRC_EXT                                                    (0x0)
 #define DMA_CH5_SRC_PTR_OFFS                                               (0x0)
 #define DMA_CH5_SRC_SEL                                                    (0x0)
@@ -136,7 +136,7 @@
 #define DMA_CH6_INC                                                        (0x0)
 #define DMA_CH6_NoOfTrans                                                  (0x1)
 #define DMA_CH6_SIZE                                                       (0x1)
-#define DMA_CH6_SRC                                           ADC1->RES_OUT2.reg
+#define DMA_CH6_SRC                                           ADC1.RES_OUT2.reg
 #define DMA_CH6_SRC_EXT                                                    (0x0)
 #define DMA_CH6_SRC_PTR_OFFS                                               (0x0)
 #define DMA_CH6_SRC_SEL                                                    (0x0)
@@ -149,7 +149,7 @@
 #define DMA_CH7_INC                                                        (0x0)
 #define DMA_CH7_NoOfTrans                                                  (0x1)
 #define DMA_CH7_SIZE                                                       (0x1)
-#define DMA_CH7_SRC                                           ADC1->RES_OUT3.reg
+#define DMA_CH7_SRC                                           ADC1.RES_OUT3.reg
 #define DMA_CH7_SRC_EXT                                                    (0x0)
 #define DMA_CH7_SRC_PTR_OFFS                                               (0x0)
 #define DMA_CH7_SRC_SEL                                                    (0x0)
@@ -162,7 +162,7 @@
 #define DMA_CH8_INC                                                        (0x0)
 #define DMA_CH8_NoOfTrans                                                  (0x1)
 #define DMA_CH8_SIZE                                                       (0x1)
-#define DMA_CH8_SRC                                           ADC1->RES_OUT4.reg
+#define DMA_CH8_SRC                                           ADC1.RES_OUT4.reg
 #define DMA_CH8_SRC_EXT                                                    (0x0)
 #define DMA_CH8_SRC_PTR_OFFS                                               (0x0)
 #define DMA_CH8_SRC_SEL                                                    (0x0)
@@ -175,7 +175,7 @@
 #define DMA_CH9_INC                                                        (0x0)
 #define DMA_CH9_NoOfTrans                                                  (0x1)
 #define DMA_CH9_SIZE                                                       (0x1)
-#define DMA_CH9_SRC                                           ADC1->RES_OUT5.reg
+#define DMA_CH9_SRC                                           ADC1.RES_OUT5.reg
 #define DMA_CH9_SRC_EXT                                                    (0x0)
 #define DMA_CH9_SRC_PTR_OFFS                                               (0x0)
 #define DMA_CH9_SRC_SEL                                                    (0x0)

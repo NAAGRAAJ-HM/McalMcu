@@ -10,7 +10,6 @@
 
 #include "tle_device.hpp"
 
-//#include "tle_variants.hpp"
 #include "RTE_Components.hpp"
 
 #ifdef RTE_DEVICE_SDK_BROM
