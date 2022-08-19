@@ -36,12 +36,17 @@
   #endif
 #endif
 
-  #define   __I      const       /*!< Defines 'read only' permissions */
-#define     __O                  /*!< Defines 'write only' permissions */
-#define     __IO                 /*!< Defines 'read / write' permissions */
-#define     __IM      const      /*! Defines 'read only' structure member permissions */
-#define     __OM                 /*! Defines 'write only' structure member permissions */
-#define     __IOM                /*! Defines 'read / write' structure member permissions */
+#if(STD_ON == _ReSIM)
+#define __I
+#define __IM
+#else
+#define __I  const
+#define __IM const
+#endif
+#define __O
+#define __IO
+#define __OM
+#define __IOM
 
 typedef union{
    struct{
