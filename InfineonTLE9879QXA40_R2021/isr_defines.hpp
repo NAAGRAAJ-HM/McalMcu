@@ -264,7 +264,6 @@
 #define UART2_RX_INT_EN                                                    (0x0)
 #define UART2_TX_CALLBACK                     place_your_function_call_back_here
 #define UART2_TX_INT_EN                                                    (0x0)
-
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/

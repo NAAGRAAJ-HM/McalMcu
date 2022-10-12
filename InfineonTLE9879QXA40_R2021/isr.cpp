@@ -1286,7 +1286,6 @@ void CCU6SR3_IRQHandler(void){
   }
 #endif
 #if(CCU6_CH2_CM_F_INT_EN == 1)
-
   if((uint16)CCU6.IEN.bit.ENCC62F == (uint16)1){
     if((uint16)CCU6.IS.bit.ICC62F == (uint16)1){
       CCU6_CH2_CM_F_CALLBACK();

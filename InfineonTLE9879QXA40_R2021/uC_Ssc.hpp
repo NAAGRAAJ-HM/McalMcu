@@ -1,95 +1,102 @@
 #pragma once
+/******************************************************************************/
+/* File   : Template.hpp                                                      */
+/* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
+/******************************************************************************/
 
-#define SSC1_BR_BR_VALUE_Pos              (0UL)
-#define SSC1_BR_BR_VALUE_Msk              (0xffffUL)
+/******************************************************************************/
+/* #INCLUDES                                                                  */
+/******************************************************************************/
+#include "tle987x.hpp"
 
-#define SSC1_CON_BC_Pos                   (0UL)
-#define SSC1_CON_BC_Msk                   (0xfUL)
-#define SSC1_CON_TE_Pos                   (8UL)
-#define SSC1_CON_TE_Msk                   (0x100UL)
-#define SSC1_CON_RE_Pos                   (9UL)
-#define SSC1_CON_RE_Msk                   (0x200UL)
-#define SSC1_CON_PE_Pos                   (10UL)
-#define SSC1_CON_PE_Msk                   (0x400UL)
-#define SSC1_CON_BE_Pos                   (11UL)
-#define SSC1_CON_BE_Msk                   (0x800UL)
-#define SSC1_CON_BSY_Pos                  (12UL)
-#define SSC1_CON_BSY_Msk                  (0x1000UL)
-#define SSC1_CON_MS_Pos                   (14UL)
-#define SSC1_CON_MS_Msk                   (0x4000UL)
-#define SSC1_CON_EN_Pos                   (15UL)
-#define SSC1_CON_EN_Msk                   (0x8000UL)
+/******************************************************************************/
+/* #DEFINES                                                                   */
+/******************************************************************************/
+#define SSC1_BR_BR_VALUE_Pos                                          (0UL)
+#define SSC1_BR_BR_VALUE_Msk                                          (0xffffUL)
+#define SSC1_CON_BC_Pos                                               (0UL)
+#define SSC1_CON_BC_Msk                                               (0xfUL)
+#define SSC1_CON_TE_Pos                                               (8UL)
+#define SSC1_CON_TE_Msk                                               (0x100UL)
+#define SSC1_CON_RE_Pos                                               (9UL)
+#define SSC1_CON_RE_Msk                                               (0x200UL)
+#define SSC1_CON_PE_Pos                                               (10UL)
+#define SSC1_CON_PE_Msk                                               (0x400UL)
+#define SSC1_CON_BE_Pos                                               (11UL)
+#define SSC1_CON_BE_Msk                                               (0x800UL)
+#define SSC1_CON_BSY_Pos                                              (12UL)
+#define SSC1_CON_BSY_Msk                                              (0x1000UL)
+#define SSC1_CON_MS_Pos                                               (14UL)
+#define SSC1_CON_MS_Msk                                               (0x4000UL)
+#define SSC1_CON_EN_Pos                                               (15UL)
+#define SSC1_CON_EN_Msk                                               (0x8000UL)
+#define SSC1_ISRCLR_TECLR_Pos                                         (8UL)
+#define SSC1_ISRCLR_TECLR_Msk                                         (0x100UL)
+#define SSC1_ISRCLR_RECLR_Pos                                         (9UL)
+#define SSC1_ISRCLR_RECLR_Msk                                         (0x200UL)
+#define SSC1_ISRCLR_PECLR_Pos                                         (10UL)
+#define SSC1_ISRCLR_PECLR_Msk                                         (0x400UL)
+#define SSC1_ISRCLR_BECLR_Pos                                         (11UL)
+#define SSC1_ISRCLR_BECLR_Msk                                         (0x800UL)
+#define SSC1_PISEL_MIS_0_Pos                                          (0UL)
+#define SSC1_PISEL_MIS_0_Msk                                          (0x1UL)
+#define SSC1_PISEL_SIS_Pos                                            (1UL)
+#define SSC1_PISEL_SIS_Msk                                            (0x2UL)
+#define SSC1_PISEL_CIS_Pos                                            (2UL)
+#define SSC1_PISEL_CIS_Msk                                            (0x4UL)
+#define SSC1_PISEL_MIS_1_Pos                                          (3UL)
+#define SSC1_PISEL_MIS_1_Msk                                          (0x8UL)
+#define SSC1_RB_RB_VALUE_Pos                                          (0UL)
+#define SSC1_RB_RB_VALUE_Msk                                          (0xffffUL)
+#define SSC1_TB_TB_VALUE_Pos                                          (0UL)
+#define SSC1_TB_TB_VALUE_Msk                                          (0xffffUL)
+#define SSC2_BR_BR_VALUE_Pos                                          (0UL)
+#define SSC2_BR_BR_VALUE_Msk                                          (0xffffUL)
+#define SSC2_CON_BC_Pos                                               (0UL)
+#define SSC2_CON_BC_Msk                                               (0xfUL)
+#define SSC2_CON_TE_Pos                                               (8UL)
+#define SSC2_CON_TE_Msk                                               (0x100UL)
+#define SSC2_CON_RE_Pos                                               (9UL)
+#define SSC2_CON_RE_Msk                                               (0x200UL)
+#define SSC2_CON_PE_Pos                                               (10UL)
+#define SSC2_CON_PE_Msk                                               (0x400UL)
+#define SSC2_CON_BE_Pos                                               (11UL)
+#define SSC2_CON_BE_Msk                                               (0x800UL)
+#define SSC2_CON_BSY_Pos                                              (12UL)
+#define SSC2_CON_BSY_Msk                                              (0x1000UL)
+#define SSC2_CON_MS_Pos                                               (14UL)
+#define SSC2_CON_MS_Msk                                               (0x4000UL)
+#define SSC2_CON_EN_Pos                                               (15UL)
+#define SSC2_CON_EN_Msk                                               (0x8000UL)
+#define SSC2_ISRCLR_TECLR_Pos                                         (8UL)
+#define SSC2_ISRCLR_TECLR_Msk                                         (0x100UL)
+#define SSC2_ISRCLR_RECLR_Pos                                         (9UL)
+#define SSC2_ISRCLR_RECLR_Msk                                         (0x200UL)
+#define SSC2_ISRCLR_PECLR_Pos                                         (10UL)
+#define SSC2_ISRCLR_PECLR_Msk                                         (0x400UL)
+#define SSC2_ISRCLR_BECLR_Pos                                         (11UL)
+#define SSC2_ISRCLR_BECLR_Msk                                         (0x800UL)
+#define SSC2_PISEL_MIS_0_Pos                                          (0UL)
+#define SSC2_PISEL_MIS_0_Msk                                          (0x1UL)
+#define SSC2_PISEL_SIS_Pos                                            (1UL)
+#define SSC2_PISEL_SIS_Msk                                            (0x2UL)
+#define SSC2_PISEL_CIS_Pos                                            (2UL)
+#define SSC2_PISEL_CIS_Msk                                            (0x4UL)
+#define SSC2_PISEL_MIS_1_Pos                                          (3UL)
+#define SSC2_PISEL_MIS_1_Msk                                          (0x8UL)
+#define SSC2_RB_RB_VALUE_Pos                                          (0UL)
+#define SSC2_RB_RB_VALUE_Msk                                          (0xffffUL)
+#define SSC2_TB_TB_VALUE_Pos                                          (0UL)
+#define SSC2_TB_TB_VALUE_Msk                                          (0xffffUL)
 
-#define SSC1_ISRCLR_TECLR_Pos             (8UL)
-#define SSC1_ISRCLR_TECLR_Msk             (0x100UL)
-#define SSC1_ISRCLR_RECLR_Pos             (9UL)
-#define SSC1_ISRCLR_RECLR_Msk             (0x200UL)
-#define SSC1_ISRCLR_PECLR_Pos             (10UL)
-#define SSC1_ISRCLR_PECLR_Msk             (0x400UL)
-#define SSC1_ISRCLR_BECLR_Pos             (11UL)
-#define SSC1_ISRCLR_BECLR_Msk             (0x800UL)
+/******************************************************************************/
+/* MACROS                                                                     */
+/******************************************************************************/
 
-#define SSC1_PISEL_MIS_0_Pos              (0UL)
-#define SSC1_PISEL_MIS_0_Msk              (0x1UL)
-#define SSC1_PISEL_SIS_Pos                (1UL)
-#define SSC1_PISEL_SIS_Msk                (0x2UL)
-#define SSC1_PISEL_CIS_Pos                (2UL)
-#define SSC1_PISEL_CIS_Msk                (0x4UL)
-#define SSC1_PISEL_MIS_1_Pos              (3UL)
-#define SSC1_PISEL_MIS_1_Msk              (0x8UL)
-
-#define SSC1_RB_RB_VALUE_Pos              (0UL)
-#define SSC1_RB_RB_VALUE_Msk              (0xffffUL)
-
-#define SSC1_TB_TB_VALUE_Pos              (0UL)
-#define SSC1_TB_TB_VALUE_Msk              (0xffffUL)
-
-#define SSC2_BR_BR_VALUE_Pos              (0UL)
-#define SSC2_BR_BR_VALUE_Msk              (0xffffUL)
-
-#define SSC2_CON_BC_Pos                   (0UL)
-#define SSC2_CON_BC_Msk                   (0xfUL)
-#define SSC2_CON_TE_Pos                   (8UL)
-#define SSC2_CON_TE_Msk                   (0x100UL)
-#define SSC2_CON_RE_Pos                   (9UL)
-#define SSC2_CON_RE_Msk                   (0x200UL)
-#define SSC2_CON_PE_Pos                   (10UL)
-#define SSC2_CON_PE_Msk                   (0x400UL)
-#define SSC2_CON_BE_Pos                   (11UL)
-#define SSC2_CON_BE_Msk                   (0x800UL)
-#define SSC2_CON_BSY_Pos                  (12UL)
-#define SSC2_CON_BSY_Msk                  (0x1000UL)
-#define SSC2_CON_MS_Pos                   (14UL)
-#define SSC2_CON_MS_Msk                   (0x4000UL)
-#define SSC2_CON_EN_Pos                   (15UL)
-#define SSC2_CON_EN_Msk                   (0x8000UL)
-
-#define SSC2_ISRCLR_TECLR_Pos             (8UL)
-#define SSC2_ISRCLR_TECLR_Msk             (0x100UL)
-#define SSC2_ISRCLR_RECLR_Pos             (9UL)
-#define SSC2_ISRCLR_RECLR_Msk             (0x200UL)
-#define SSC2_ISRCLR_PECLR_Pos             (10UL)
-#define SSC2_ISRCLR_PECLR_Msk             (0x400UL)
-#define SSC2_ISRCLR_BECLR_Pos             (11UL)
-#define SSC2_ISRCLR_BECLR_Msk             (0x800UL)
-
-#define SSC2_PISEL_MIS_0_Pos              (0UL)
-#define SSC2_PISEL_MIS_0_Msk              (0x1UL)
-#define SSC2_PISEL_SIS_Pos                (1UL)
-#define SSC2_PISEL_SIS_Msk                (0x2UL)
-#define SSC2_PISEL_CIS_Pos                (2UL)
-#define SSC2_PISEL_CIS_Msk                (0x4UL)
-#define SSC2_PISEL_MIS_1_Pos              (3UL)
-#define SSC2_PISEL_MIS_1_Msk              (0x8UL)
-
-#define SSC2_RB_RB_VALUE_Pos              (0UL)
-#define SSC2_RB_RB_VALUE_Msk              (0xffffUL)
-
-#define SSC2_TB_TB_VALUE_Pos              (0UL)
-#define SSC2_TB_TB_VALUE_Msk              (0xffffUL)
-
+/******************************************************************************/
+/* TYPEDEFS                                                                   */
+/******************************************************************************/
 typedef struct{
-
   union{
     __IOM uint16_t reg;
 
@@ -161,7 +168,6 @@ typedef struct{
 }SSC1_Type;
 
 typedef struct{
-
   union{
     __IOM uint16_t reg;
 
@@ -232,5 +238,25 @@ typedef struct{
   }ISRCLR;
 }SSC2_Type;
 
-extern SSC1_Type    SSC1;
-extern SSC2_Type    SSC2;
+/******************************************************************************/
+/* CONSTS                                                                     */
+/******************************************************************************/
+
+/******************************************************************************/
+/* PARAMS                                                                     */
+/******************************************************************************/
+
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+extern SSC1_Type                                                           SSC1;
+extern SSC2_Type                                                           SSC2;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
+

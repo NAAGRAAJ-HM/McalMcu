@@ -1,95 +1,106 @@
 #pragma once
+/******************************************************************************/
+/* File   : Template.hpp                                                      */
+/* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
+/******************************************************************************/
 
-#define MF_BEMFC_CTRL_STS_PHW_ZC_STS_Pos   (18UL)
-#define MF_BEMFC_CTRL_STS_PHW_ZC_STS_Msk   (0x40000UL)
-#define MF_BEMFC_CTRL_STS_PHV_ZC_STS_Pos   (17UL)
-#define MF_BEMFC_CTRL_STS_PHV_ZC_STS_Msk   (0x20000UL)
-#define MF_BEMFC_CTRL_STS_PHU_ZC_STS_Pos   (16UL)
-#define MF_BEMFC_CTRL_STS_PHU_ZC_STS_Msk   (0x10000UL)
-#define MF_BEMFC_CTRL_STS_CCPOS_INSEL_Pos  (12UL)
-#define MF_BEMFC_CTRL_STS_CCPOS_INSEL_Msk  (0x1000UL)
-#define MF_BEMFC_CTRL_STS_PHWCOMP_ON_Pos   (10UL)
-#define MF_BEMFC_CTRL_STS_PHWCOMP_ON_Msk   (0x400UL)
-#define MF_BEMFC_CTRL_STS_PHVCOMP_ON_Pos   (9UL)
-#define MF_BEMFC_CTRL_STS_PHVCOMP_ON_Msk   (0x200UL)
-#define MF_BEMFC_CTRL_STS_PHUCOMP_ON_Pos   (8UL)
-#define MF_BEMFC_CTRL_STS_PHUCOMP_ON_Msk   (0x100UL)
-#define MF_BEMFC_CTRL_STS_GPT12CAPINSW_Pos (5UL)
-#define MF_BEMFC_CTRL_STS_GPT12CAPINSW_Msk (0x20UL)
-#define MF_BEMFC_CTRL_STS_FILTBYPS_Pos     (4UL)
-#define MF_BEMFC_CTRL_STS_FILTBYPS_Msk     (0x10UL)
-#define MF_BEMFC_CTRL_STS_DEMGFILTDIS_Pos  (3UL)
-#define MF_BEMFC_CTRL_STS_DEMGFILTDIS_Msk  (0x8UL)
-#define MF_BEMFC_CTRL_STS_PHWCOMP_EN_Pos   (2UL)
-#define MF_BEMFC_CTRL_STS_PHWCOMP_EN_Msk   (0x4UL)
-#define MF_BEMFC_CTRL_STS_PHVCOMP_EN_Pos   (1UL)
-#define MF_BEMFC_CTRL_STS_PHVCOMP_EN_Msk   (0x2UL)
-#define MF_BEMFC_CTRL_STS_PHUCOMP_EN_Pos   (0UL)
-#define MF_BEMFC_CTRL_STS_PHUCOMP_EN_Msk   (0x1UL)
+/******************************************************************************/
+/* #INCLUDES                                                                  */
+/******************************************************************************/
+#include "tle987x.hpp"
 
-#define MF_CSA_CTRL_VZERO_Pos             (8UL)
-#define MF_CSA_CTRL_VZERO_Msk             (0x100UL)
-#define MF_CSA_CTRL_GAIN_Pos              (1UL)
-#define MF_CSA_CTRL_GAIN_Msk              (0x6UL)
-#define MF_CSA_CTRL_EN_Pos                (0UL)
-#define MF_CSA_CTRL_EN_Msk                (0x1UL)
+/******************************************************************************/
+/* #DEFINES                                                                   */
+/******************************************************************************/
+#define MF_BEMFC_CTRL_STS_PHW_ZC_STS_Pos                             (18UL)
+#define MF_BEMFC_CTRL_STS_PHW_ZC_STS_Msk                             (0x40000UL)
+#define MF_BEMFC_CTRL_STS_PHV_ZC_STS_Pos                             (17UL)
+#define MF_BEMFC_CTRL_STS_PHV_ZC_STS_Msk                             (0x20000UL)
+#define MF_BEMFC_CTRL_STS_PHU_ZC_STS_Pos                             (16UL)
+#define MF_BEMFC_CTRL_STS_PHU_ZC_STS_Msk                             (0x10000UL)
+#define MF_BEMFC_CTRL_STS_CCPOS_INSEL_Pos                            (12UL)
+#define MF_BEMFC_CTRL_STS_CCPOS_INSEL_Msk                            (0x1000UL)
+#define MF_BEMFC_CTRL_STS_PHWCOMP_ON_Pos                             (10UL)
+#define MF_BEMFC_CTRL_STS_PHWCOMP_ON_Msk                             (0x400UL)
+#define MF_BEMFC_CTRL_STS_PHVCOMP_ON_Pos                             (9UL)
+#define MF_BEMFC_CTRL_STS_PHVCOMP_ON_Msk                             (0x200UL)
+#define MF_BEMFC_CTRL_STS_PHUCOMP_ON_Pos                             (8UL)
+#define MF_BEMFC_CTRL_STS_PHUCOMP_ON_Msk                             (0x100UL)
+#define MF_BEMFC_CTRL_STS_GPT12CAPINSW_Pos                           (5UL)
+#define MF_BEMFC_CTRL_STS_GPT12CAPINSW_Msk                           (0x20UL)
+#define MF_BEMFC_CTRL_STS_FILTBYPS_Pos                               (4UL)
+#define MF_BEMFC_CTRL_STS_FILTBYPS_Msk                               (0x10UL)
+#define MF_BEMFC_CTRL_STS_DEMGFILTDIS_Pos                            (3UL)
+#define MF_BEMFC_CTRL_STS_DEMGFILTDIS_Msk                            (0x8UL)
+#define MF_BEMFC_CTRL_STS_PHWCOMP_EN_Pos                             (2UL)
+#define MF_BEMFC_CTRL_STS_PHWCOMP_EN_Msk                             (0x4UL)
+#define MF_BEMFC_CTRL_STS_PHVCOMP_EN_Pos                             (1UL)
+#define MF_BEMFC_CTRL_STS_PHVCOMP_EN_Msk                             (0x2UL)
+#define MF_BEMFC_CTRL_STS_PHUCOMP_EN_Pos                             (0UL)
+#define MF_BEMFC_CTRL_STS_PHUCOMP_EN_Msk                             (0x1UL)
+#define MF_CSA_CTRL_VZERO_Pos                                        (8UL)
+#define MF_CSA_CTRL_VZERO_Msk                                        (0x100UL)
+#define MF_CSA_CTRL_GAIN_Pos                                         (1UL)
+#define MF_CSA_CTRL_GAIN_Msk                                         (0x6UL)
+#define MF_CSA_CTRL_EN_Pos                                           (0UL)
+#define MF_CSA_CTRL_EN_Msk                                           (0x1UL)
+#define MF_P2_ADCSEL_CTRL_ADC1_CH1_SEL_Pos                           (10UL)
+#define MF_P2_ADCSEL_CTRL_ADC1_CH1_SEL_Msk                           (0x400UL)
+#define MF_P2_ADCSEL_CTRL_ADC3_INN_SEL_Pos                           (9UL)
+#define MF_P2_ADCSEL_CTRL_ADC3_INN_SEL_Msk                           (0x200UL)
+#define MF_P2_ADCSEL_CTRL_ADC3_INP_SEL_Pos                           (8UL)
+#define MF_P2_ADCSEL_CTRL_ADC3_INP_SEL_Msk                           (0x100UL)
+#define MF_P2_ADCSEL_CTRL_P2_0_ADC_SEL_Pos                           (0UL)
+#define MF_P2_ADCSEL_CTRL_P2_0_ADC_SEL_Msk                           (0x1UL)
+#define MF_P2_ADCSEL_CTRL_P2_2_ADC_SEL_Pos                           (1UL)
+#define MF_P2_ADCSEL_CTRL_P2_2_ADC_SEL_Msk                           (0x2UL)
+#define MF_P2_ADCSEL_CTRL_P2_3_ADC_SEL_Pos                           (2UL)
+#define MF_P2_ADCSEL_CTRL_P2_3_ADC_SEL_Msk                           (0x4UL)
+#define MF_P2_ADCSEL_CTRL_P2_4_ADC_SEL_Pos                           (3UL)
+#define MF_P2_ADCSEL_CTRL_P2_4_ADC_SEL_Msk                           (0x8UL)
+#define MF_P2_ADCSEL_CTRL_P2_5_ADC_SEL_Pos                           (4UL)
+#define MF_P2_ADCSEL_CTRL_P2_5_ADC_SEL_Msk                           (0x10UL)
+#define MF_REF1_STS_REFBG_UPTHWARN_STS_Pos                           (5UL)
+#define MF_REF1_STS_REFBG_UPTHWARN_STS_Msk                           (0x20UL)
+#define MF_REF1_STS_REFBG_LOTHWARN_STS_Pos                           (4UL)
+#define MF_REF1_STS_REFBG_LOTHWARN_STS_Msk                           (0x10UL)
+#define MF_REF2_CTRL_VREF5V_OV_STS_Pos                               (3UL)
+#define MF_REF2_CTRL_VREF5V_OV_STS_Msk                               (0x8UL)
+#define MF_REF2_CTRL_VREF5V_UV_STS_Pos                               (2UL)
+#define MF_REF2_CTRL_VREF5V_UV_STS_Msk                               (0x4UL)
+#define MF_REF2_CTRL_VREF5V_OVL_STS_Pos                              (1UL)
+#define MF_REF2_CTRL_VREF5V_OVL_STS_Msk                              (0x2UL)
+#define MF_REF2_CTRL_VREF5V_PD_N_Pos                                 (0UL)
+#define MF_REF2_CTRL_VREF5V_PD_N_Msk                                 (0x1UL)
+#define MF_TEMPSENSE_CTRL_SYS_OT_STS_Pos                             (7UL)
+#define MF_TEMPSENSE_CTRL_SYS_OT_STS_Msk                             (0x80UL)
+#define MF_TEMPSENSE_CTRL_SYS_OTWARN_STS_Pos                         (6UL)
+#define MF_TEMPSENSE_CTRL_SYS_OTWARN_STS_Msk                         (0x40UL)
+#define MF_TEMPSENSE_CTRL_PMU_OT_STS_Pos                             (5UL)
+#define MF_TEMPSENSE_CTRL_PMU_OT_STS_Msk                             (0x20UL)
+#define MF_TEMPSENSE_CTRL_PMU_OTWARN_STS_Pos                         (4UL)
+#define MF_TEMPSENSE_CTRL_PMU_OTWARN_STS_Msk                         (0x10UL)
+#define MF_TRIM_BEMFx_BEMF_TFILT_SEL_Pos                             (8UL)
+#define MF_TRIM_BEMFx_BEMF_TFILT_SEL_Msk                             (0x300UL)
+#define MF_TRIM_BEMFx_BEMF_GPT_CAPIN_SEL_Pos                         (4UL)
+#define MF_TRIM_BEMFx_BEMF_GPT_CAPIN_SEL_Msk                         (0x30UL)
+#define MF_TRIM_BEMFx_BEMF_BT_TFILT_SEL_Pos                          (0UL)
+#define MF_TRIM_BEMFx_BEMF_BT_TFILT_SEL_Msk                          (0x7UL)
+#define MF_VMON_SEN_CTRL_VMON_SEN_SEL_INRANGE_Pos                    (5UL)
+#define MF_VMON_SEN_CTRL_VMON_SEN_SEL_INRANGE_Msk                    (0x20UL)
+#define MF_VMON_SEN_CTRL_VMON_SEN_HRESO_5V_Pos                       (4UL)
+#define MF_VMON_SEN_CTRL_VMON_SEN_HRESO_5V_Msk                       (0x10UL)
+#define MF_VMON_SEN_CTRL_VMON_SEN_PD_N_Pos                           (0UL)
+#define MF_VMON_SEN_CTRL_VMON_SEN_PD_N_Msk                           (0x1UL)
 
-#define MF_P2_ADCSEL_CTRL_ADC1_CH1_SEL_Pos (10UL)
-#define MF_P2_ADCSEL_CTRL_ADC1_CH1_SEL_Msk (0x400UL)
-#define MF_P2_ADCSEL_CTRL_ADC3_INN_SEL_Pos (9UL)
-#define MF_P2_ADCSEL_CTRL_ADC3_INN_SEL_Msk (0x200UL)
-#define MF_P2_ADCSEL_CTRL_ADC3_INP_SEL_Pos (8UL)
-#define MF_P2_ADCSEL_CTRL_ADC3_INP_SEL_Msk (0x100UL)
-#define MF_P2_ADCSEL_CTRL_P2_0_ADC_SEL_Pos (0UL)
-#define MF_P2_ADCSEL_CTRL_P2_0_ADC_SEL_Msk (0x1UL)
-#define MF_P2_ADCSEL_CTRL_P2_2_ADC_SEL_Pos (1UL)
-#define MF_P2_ADCSEL_CTRL_P2_2_ADC_SEL_Msk (0x2UL)
-#define MF_P2_ADCSEL_CTRL_P2_3_ADC_SEL_Pos (2UL)
-#define MF_P2_ADCSEL_CTRL_P2_3_ADC_SEL_Msk (0x4UL)
-#define MF_P2_ADCSEL_CTRL_P2_4_ADC_SEL_Pos (3UL)
-#define MF_P2_ADCSEL_CTRL_P2_4_ADC_SEL_Msk (0x8UL)
-#define MF_P2_ADCSEL_CTRL_P2_5_ADC_SEL_Pos (4UL)
-#define MF_P2_ADCSEL_CTRL_P2_5_ADC_SEL_Msk (0x10UL)
+/******************************************************************************/
+/* MACROS                                                                     */
+/******************************************************************************/
 
-#define MF_REF1_STS_REFBG_UPTHWARN_STS_Pos (5UL)
-#define MF_REF1_STS_REFBG_UPTHWARN_STS_Msk (0x20UL)
-#define MF_REF1_STS_REFBG_LOTHWARN_STS_Pos (4UL)
-#define MF_REF1_STS_REFBG_LOTHWARN_STS_Msk (0x10UL)
-
-#define MF_REF2_CTRL_VREF5V_OV_STS_Pos    (3UL)
-#define MF_REF2_CTRL_VREF5V_OV_STS_Msk    (0x8UL)
-#define MF_REF2_CTRL_VREF5V_UV_STS_Pos    (2UL)
-#define MF_REF2_CTRL_VREF5V_UV_STS_Msk    (0x4UL)
-#define MF_REF2_CTRL_VREF5V_OVL_STS_Pos   (1UL)
-#define MF_REF2_CTRL_VREF5V_OVL_STS_Msk   (0x2UL)
-#define MF_REF2_CTRL_VREF5V_PD_N_Pos      (0UL)
-#define MF_REF2_CTRL_VREF5V_PD_N_Msk      (0x1UL)
-
-#define MF_TEMPSENSE_CTRL_SYS_OT_STS_Pos  (7UL)
-#define MF_TEMPSENSE_CTRL_SYS_OT_STS_Msk  (0x80UL)
-#define MF_TEMPSENSE_CTRL_SYS_OTWARN_STS_Pos (6UL)
-#define MF_TEMPSENSE_CTRL_SYS_OTWARN_STS_Msk (0x40UL)
-#define MF_TEMPSENSE_CTRL_PMU_OT_STS_Pos  (5UL)
-#define MF_TEMPSENSE_CTRL_PMU_OT_STS_Msk  (0x20UL)
-#define MF_TEMPSENSE_CTRL_PMU_OTWARN_STS_Pos (4UL)
-#define MF_TEMPSENSE_CTRL_PMU_OTWARN_STS_Msk (0x10UL)
-
-#define MF_TRIM_BEMFx_BEMF_TFILT_SEL_Pos  (8UL)
-#define MF_TRIM_BEMFx_BEMF_TFILT_SEL_Msk  (0x300UL)
-#define MF_TRIM_BEMFx_BEMF_GPT_CAPIN_SEL_Pos (4UL)
-#define MF_TRIM_BEMFx_BEMF_GPT_CAPIN_SEL_Msk (0x30UL)
-#define MF_TRIM_BEMFx_BEMF_BT_TFILT_SEL_Pos (0UL)
-#define MF_TRIM_BEMFx_BEMF_BT_TFILT_SEL_Msk (0x7UL)
-
-#define MF_VMON_SEN_CTRL_VMON_SEN_SEL_INRANGE_Pos (5UL)
-#define MF_VMON_SEN_CTRL_VMON_SEN_SEL_INRANGE_Msk (0x20UL)
-#define MF_VMON_SEN_CTRL_VMON_SEN_HRESO_5V_Pos (4UL)
-#define MF_VMON_SEN_CTRL_VMON_SEN_HRESO_5V_Msk (0x10UL)
-#define MF_VMON_SEN_CTRL_VMON_SEN_PD_N_Pos (0UL)
-#define MF_VMON_SEN_CTRL_VMON_SEN_PD_N_Msk (0x1UL)
-
+/******************************************************************************/
+/* TYPEDEFS                                                                   */
+/******************************************************************************/
 typedef struct{
-
   union{
     __IOM uint32_t reg;
 
@@ -188,4 +199,25 @@ typedef struct{
   }TRIM_BEMFx;
 }MF_Type;
 
-extern MF_Type      MF;
+/******************************************************************************/
+/* CONSTS                                                                     */
+/******************************************************************************/
+
+/******************************************************************************/
+/* PARAMS                                                                     */
+/******************************************************************************/
+
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+extern MF_Type                                                               MF;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
+
+

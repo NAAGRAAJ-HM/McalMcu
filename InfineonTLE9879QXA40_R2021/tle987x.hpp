@@ -56,7 +56,6 @@ typedef enum{
 #define __FPU_PRESENT                  0
 
 #include "core_cm3.hpp"
-#include "system_tle987x.hpp"
 
 #ifndef __IM
 #define __IM   __I
@@ -67,21 +66,6 @@ typedef enum{
 #ifndef __IOM
 #define __IOM  __IO
 #endif
-
-#include "uC_Adc.hpp"
-#include "uC_Bdrv.hpp"
-#include "uC_Ccu6.hpp"
-#include "uC_Cpu.hpp"
-#include "uC_Csa.hpp"
-#include "uC_Dma.hpp"
-#include "uC_Gpt.hpp"
-#include "uC_Lin.hpp"
-#include "uC_Mf.hpp"
-#include "uC_Mon.hpp"
-#include "uC_Pmu.hpp"
-#include "uC_Port.hpp"
-#include "uC_Scu.hpp"
-#include "uC_Ssc.hpp"
 
 /******************************************************************************/
 /* CONSTS                                                                     */

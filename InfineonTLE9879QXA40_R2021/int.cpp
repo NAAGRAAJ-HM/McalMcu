@@ -10,7 +10,9 @@
 
 #include "int.hpp"
 
-#include "tle987x.hpp"
+#include "uC_Scu.hpp"
+#include "uC_Cpu.hpp"
+
 #include "sfr_access.hpp"
 #include "RTE_Components.hpp"
 
@@ -499,7 +501,7 @@ void BEMF_Phase_W_Lo_Int_Clr(void){
 }
 
 uint8 INT_Get_NMI_Status(void){
-  return u8_Field_Rd8(&SCU.NMISR.reg, (uint8)SCU_NMISR_Pos, (uint8)SCU_NMISR_Msk);
+   return u8_Field_Rd8(&SCU.NMISR.reg, (uint8)SCU_NMISR_Pos, (uint8)SCU_NMISR_Msk);
 }
 
 void INT_Clr_NMI_Status(uint8 Flags){

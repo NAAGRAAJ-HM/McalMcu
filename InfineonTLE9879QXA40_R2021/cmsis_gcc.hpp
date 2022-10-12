@@ -37,7 +37,6 @@
 #define __WEAK                                 __attribute__((weak))
 #define __WFE()
 #define __WFI()
-
 #define __REVSH(value)                                                         0
 #define __QADD(op1,op2)                                                        0
 #define __QSUB(op1,op2)                                                        0
@@ -178,4 +177,3 @@
 #define __TZ_set_PSPLIM_NS(ProcStackPtrLimit)
 #define __TZ_set_SP_NS(topOfStack)
 #define __TZ_set_STACKSEAL_S(stackTop)
-
