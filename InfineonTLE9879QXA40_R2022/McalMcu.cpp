@@ -47,6 +47,8 @@ VAR(module_McalMcu, MCALMCU_VAR) McalMcu;
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
+extern void PMU_Init(void); //TBD: use interface headers as per architecture
+
 FUNC(void, MCALMCU_CODE) module_McalMcu::InitFunction(
       CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrConstModule
    ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALMCU_CONFIG_DATA, MCALMCU_APPL_CONST) lptrCfgModule
@@ -74,6 +76,7 @@ FUNC(void, MCALMCU_CODE) module_McalMcu::InitFunction(
          );
 #endif
       }
+      PMU_Init();
 #if(STD_ON == McalMcu_InitCheck)
       IsInitDone = E_OK;
    }

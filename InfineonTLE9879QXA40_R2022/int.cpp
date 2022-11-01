@@ -1,5 +1,5 @@
 /******************************************************************************/
-/* File   : Template.hpp                                                      */
+/* File   : int.cpp                                                           */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -12,12 +12,10 @@
 
 #include "uC_Scu.hpp"
 #include "uC_Cpu.hpp"
-
 #include "sfr_access.hpp"
-#include "RTE_Components.hpp"
+#include "scu_defines.hpp"
 
 #include "int_defines.hpp"
-#include "scu_defines.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -87,13 +85,7 @@ void INT_Init(void){
    SCU.DMAIEN2.reg = (uint8) SCU_DMAIEN2;
 #endif
 #endif
-#if(CONFIGWIZARD == 1)
-#if(INT_XML_VERSION >= 10300)
-   CPU.SHPR3.reg = (uint32) CPU_NVIC_SHPR3;
-#endif
-#else
    CPU.SHPR3.reg = (uint32) CPU_SHPR3;
-#endif
 }
 /*
 void Global_Int_En(void){

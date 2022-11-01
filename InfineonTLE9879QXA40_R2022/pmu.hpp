@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : Template.hpp                                                      */
+/* File   : pmu.hpp                                                           */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -52,7 +52,6 @@
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 extern void  PMU_Init                                                    (void);
-extern bool  PMU_VDDEXT_On                                               (void);
 extern uint8 PMU_Get_Reset_Status                                        (void);
 extern void  PMU_Clear_Reset_Status                                      (void);
 extern uint8 PMU_VDDEXT_Off                                              (void);
