@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalMcu.hpp                                                           */
+/* File   : McalMcu.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalMcu.hpp"
+#include "infMcalMcu_ServiceNvM_Types.hpp"
 #include "CfgMcalMcu.hpp"
 #include "McalMcu_core.hpp"
 #include "infMcalMcu_Exp.hpp"
