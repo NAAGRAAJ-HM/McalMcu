@@ -33,14 +33,14 @@ class module_McalMcu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstMcalMcu_Type* lptrConst = (ConstMcalMcu_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
    public:
       FUNC(void, MCALMCU_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALMCU_CONFIG_DATA, MCALMCU_APPL_CONST) lptrCfgModule
       );
       FUNC(void, MCALMCU_CODE) DeInitFunction (void);

@@ -13,19 +13,10 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALMCU_AR_RELEASE_VERSION_MAJOR                                       4
-#define MCALMCU_AR_RELEASE_VERSION_MINOR                                       3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MCALMCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible MCALMCU_AR_RELEASE_VERSION_MAJOR!"
-#endif
-
-#if(MCALMCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible MCALMCU_AR_RELEASE_VERSION_MINOR!"
-#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -50,7 +41,7 @@ VAR(module_McalMcu, MCALMCU_VAR) McalMcu;
 extern void PMU_Init(void); //TBD: use interface headers as per architecture
 
 FUNC(void, MCALMCU_CODE) module_McalMcu::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrConstModule
+      CONSTP2CONST(ConstModule_TypeAbstract, MCALMCU_CONST,       MCALMCU_APPL_CONST) lptrNvMBlocksRomModule
    ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALMCU_CONFIG_DATA, MCALMCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalMcu_InitCheck)
@@ -60,10 +51,10 @@ FUNC(void, MCALMCU_CODE) module_McalMcu::InitFunction(
    ){
 #endif
       if(
-            (NULL_PTR != lptrConstModule)
+            (NULL_PTR != lptrNvMBlocksRomModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = (const ConstMcalMcu_Type*)lptrConstModule;
+         lptrNvMBlocksRom = lptrNvMBlocksRomModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
