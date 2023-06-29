@@ -53,6 +53,8 @@ typedef struct{
 __IOREG(WDTA0, 0xFFED0000, __READ_WRITE, __type44);
 __IOREG(WDTA1, 0xFFED1000, __READ_WRITE, __type44);
 #else
+__type44 WDTA0;
+__type44 WDTA1;
 #endif
 
 /******************************************************************************/
