@@ -1,5 +1,6 @@
+#pragma once
 /******************************************************************************/
-/* File   : McalMcu.c                                                         */
+/* File   : uC_Mcu.h                                                          */
 /*                                                                            */
 /* Author : Raajnaag HULIYAPURADA MATA                                        */
 /*                                                                            */
@@ -13,7 +14,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright � 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -23,10 +24,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Std_Types.h"
-
-#include "infMcalMcuSwcApplStartUp.h"
-#include "uC_Mcu.h"
+#include "uC.h"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -39,24 +37,19 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+#ifndef ReSim
+__IOREG(WUF0, 0xFFF80400, __READ, uint32);
+#else
+volatile uint32 WUF0;
+#endif
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-static volatile VAR(uint32, MCALMCU_VAR_FAST) lvu32RegisterWakeupFactor;
-static volatile VAR(uint32, MCALMCU_VAR_FAST) lvu32RegisterWakeupFactorControl;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(uint32, MCALMCU_CODE) infMcalMcuSwcApplStartUp_u32GetWakeupFactor(void){
-   return lvu32RegisterWakeupFactor;
-}
-
-FUNC(void, MCALMCU_CODE) infMcalMcuSwcApplStartUp_vSetWakeupFactor(void){
-   lvu32RegisterWakeupFactor        = WUF0;
-   lvu32RegisterWakeupFactorControl = !lvu32RegisterWakeupFactor;
-}
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -73,4 +66,3 @@ FUNC(void, MCALMCU_CODE) infMcalMcuSwcApplStartUp_vSetWakeupFactor(void){
 /******************************************************************************/
 /* EOF                                                                        */
 /******************************************************************************/
-

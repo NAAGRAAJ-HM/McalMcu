@@ -54,7 +54,7 @@
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 extern FUNC(uint32, MCALMCU_CODE) infMcalMcuSwcApplStartUp_u32GetWakeupFactor (void);
-extern FUNC(void,   MCALMCU_CODE) infMcalMcuSwcApplStartUp_vSetWakeupFactor   (uint32 ulWuf);
+extern FUNC(void,   MCALMCU_CODE) infMcalMcuSwcApplStartUp_vSetWakeupFactor   (void);
 
 /******************************************************************************/
 /* EOF                                                                        */

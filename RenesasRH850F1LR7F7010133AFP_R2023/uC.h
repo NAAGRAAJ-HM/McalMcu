@@ -28,9 +28,6 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-//#undef ReSim
-#define ReSim                                                                  1
-
 #ifndef ReSim
 #ifndef _GHS_PRAGMA_IO_TYPEDEF_
 #define _GHS_PRAGMA_IO_TYPEDEF_
