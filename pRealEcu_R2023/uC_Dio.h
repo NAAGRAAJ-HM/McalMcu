@@ -1,5 +1,6 @@
+#pragma once
 /******************************************************************************/
-/* File   : McalMcu.c                                                         */
+/* File   : uC_Dio.h                                                          */
 /*                                                                            */
 /* Author : Raajnaag HULIYAPURADA MATA                                        */
 /*                                                                            */
@@ -23,10 +24,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Std_Types.h"
-
-#include "infMcalMcuSwcApplStartUp.h"
-#include "uC_Mcu.h"
+#include "uC.h"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -39,24 +37,59 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+#ifndef ReSim
+__IOREG(P0,     0xFFC10000, __READ_WRITE, uint16);
+__IOREG(P8,     0xFFC10020, __READ_WRITE, uint16);
+__IOREG(P9,     0xFFC10024, __READ_WRITE, uint16);
+__IOREG(P10,    0xFFC10028, __READ_WRITE, uint16);
+__IOREG(PPR0,   0xFFC10200, __READ,       uint16);
+__IOREG(PPR8,   0xFFC10220, __READ,       uint16);
+__IOREG(PPR9,   0xFFC10224, __READ,       uint16);
+__IOREG(PPR10,  0xFFC10228, __READ,       uint16);
+__IOREG(PM0,    0xFFC10300, __READ_WRITE, uint16);
+__IOREG(PM8,    0xFFC10320, __READ_WRITE, uint16);
+__IOREG(PM9,    0xFFC10324, __READ_WRITE, uint16);
+__IOREG(PM10,   0xFFC10328, __READ_WRITE, uint16);
+__IOREG(PMC0,   0xFFC10400, __READ_WRITE, uint16);
+__IOREG(PMC8,   0xFFC10420, __READ_WRITE, uint16);
+__IOREG(PMC9,   0xFFC10424, __READ_WRITE, uint16);
+__IOREG(PMC10,  0xFFC10428, __READ_WRITE, uint16);
+__IOREG(PIBC0,  0xFFC14000, __READ_WRITE, uint16);
+__IOREG(PIBC8,  0xFFC14020, __READ_WRITE, uint16);
+__IOREG(PIBC9,  0xFFC14024, __READ_WRITE, uint16);
+__IOREG(PIBC10, 0xFFC14028, __READ_WRITE, uint16);
+__IOREG(PU0,    0xFFC14300, __READ_WRITE, uint16);
+#else
+extern volatile uint16 P0;
+extern volatile uint16 P8;
+extern volatile uint16 P9;
+extern volatile uint16 P10;
+extern volatile uint16 PPR0;
+extern volatile uint16 PPR8;
+extern volatile uint16 PPR9;
+extern volatile uint16 PPR10;
+extern volatile uint16 PM0;
+extern volatile uint16 PM8;
+extern volatile uint16 PM9;
+extern volatile uint16 PM10;
+extern volatile uint16 PMC0;
+extern volatile uint16 PMC8;
+extern volatile uint16 PMC9;
+extern volatile uint16 PMC10;
+extern volatile uint16 PIBC0;
+extern volatile uint16 PIBC8;
+extern volatile uint16 PIBC9;
+extern volatile uint16 PIBC10;
+extern volatile uint16 PU0;
+#endif
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-static volatile VAR(uint32, MCALMCU_VAR_FAST) lvu32RegisterWakeupFactor;
-static volatile VAR(uint32, MCALMCU_VAR_FAST) lvu32RegisterWakeupFactorControl;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(uint32, MCALMCU_CODE) infMcalMcuSwcApplStartUp_u32GetWakeupFactor(void){
-   return lvu32RegisterWakeupFactor;
-}
-
-FUNC(void, MCALMCU_CODE) infMcalMcuSwcApplStartUp_vSetWakeupFactor(void){
-   lvu32RegisterWakeupFactor        = WUF0;
-   lvu32RegisterWakeupFactorControl = !lvu32RegisterWakeupFactor;
-}
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -73,4 +106,3 @@ FUNC(void, MCALMCU_CODE) infMcalMcuSwcApplStartUp_vSetWakeupFactor(void){
 /******************************************************************************/
 /* EOF                                                                        */
 /******************************************************************************/
-
