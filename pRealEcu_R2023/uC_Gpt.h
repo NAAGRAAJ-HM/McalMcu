@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : uC.h                                                              */
+/* File   : uC_Gpt.h                                                          */
 /*                                                                            */
 /* Author : Raajnaag HULIYAPURADA MATA                                        */
 /*                                                                            */
@@ -24,64 +24,52 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "uC.h"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define L                                                                      0
-#define H                                                                      1
-
-#ifndef ReSim
-#ifndef _GHS_PRAGMA_IO_TYPEDEF_
-#define _GHS_PRAGMA_IO_TYPEDEF_
-#define PRAGMA(x) _Pragma(#x)
-#define __READ volatile const
-#define __WRITE volatile
-#define __READ_WRITE volatile
-
-#define __IOREG(reg, addr, attrib, type) PRAGMA(ghs io reg addr) \
-extern attrib type reg;
-
-#define __IOREGARRAY(reg, array, addr, attrib, type) PRAGMA(ghs io reg addr) \
-extern attrib type reg[array];
-#endif
-#endif
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#define protected_write(preg,pstatus,reg,value)   do{\
-                                                  (preg)=0xa5u;\
-                                                  (reg)=(value);\
-                                                  (reg)=~(value);\
-                                                  (reg)=(value);\
-                                                  }while((pstatus)==1u)
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-typedef struct{
-   uint8 bit00:1;
-   uint8 bit01:1;
-   uint8 bit02:1;
-   uint8 bit03:1;
-   uint8 bit04:1;
-   uint8 bit05:1;
-   uint8 bit06:1;
-   uint8 bit07:1;
-}__bitf_T;
-
-typedef union{                                            /* IOR              */
-   uint32 UINT32;                                         /* 32-bit Access    */
-   uint16 UINT16[2];                                      /* 16-bit Access    */
-   uint8  UINT8[4];                                       /* 8-bit Access     */
-}__type9;
-
-typedef union{                                            /* IOR              */
-   uint32 UINT32;                                         /* 32-bit Access    */
-   uint16 UINT16[2];                                      /* 16-bit Access    */
-}__type16;
-
+#ifndef ReSim
+__IOREG(PROTCMD0,         0xFFF80000, __READ_WRITE, uint32);
+__IOREG(PROTS0,           0xFFF80004, __READ,       uint32);
+__IOREG(MOSCE,            0xFFF81100, __READ_WRITE, uint32);
+__IOREG(MOSCS,            0xFFF81104, __READ,       uint32);
+__IOREG(MOSCC,            0xFFF81108, __READ_WRITE, uint32);
+__IOREG(MOSCST,           0xFFF8110C, __READ_WRITE, uint32);
+__IOREG(PROTCMD1,         0xFFF88000, __READ_WRITE, uint32);
+__IOREG(PROTS1,           0xFFF88004, __READ,       uint32);
+__IOREG(PLLE,             0xFFF89000, __READ_WRITE, uint32);
+__IOREG(PLLS,             0xFFF89004, __READ,       uint32);
+__IOREG(PLLC,             0xFFF89008, __READ_WRITE, uint32);
+__IOREG(CKSC_CPUCLKS_CTL, 0xFFF8A000, __READ_WRITE, uint32);
+__IOREG(CKSC_CPUCLKS_ACT, 0xFFF8A008, __READ,       uint32);
+__IOREG(CKSC_CPUCLKD_CTL, 0xFFF8A100, __READ_WRITE, uint32);
+__IOREG(CKSC_CPUCLKD_ACT, 0xFFF8A108, __READ,       uint32);
+#else
+extern volatile       uint32 PROTCMD0;
+extern volatile const uint32 PROTS0;
+extern volatile       uint32 MOSCE;
+extern volatile const uint32 MOSCS;
+extern volatile       uint32 MOSCC;
+extern volatile       uint32 MOSCST;
+extern volatile       uint32 PROTCMD1;
+extern volatile const uint32 PROTS1;
+extern volatile       uint32 PLLE;
+extern volatile const uint32 PLLS;
+extern volatile       uint32 PLLC;
+extern volatile       uint32 CKSC_CPUCLKS_CTL;
+extern volatile const uint32 CKSC_CPUCLKS_ACT;
+extern volatile       uint32 CKSC_CPUCLKD_CTL;
+extern volatile const uint32 CKSC_CPUCLKD_ACT;
+#endif
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
@@ -106,4 +94,3 @@ typedef union{                                            /* IOR              */
 /******************************************************************************/
 /* EOF                                                                        */
 /******************************************************************************/
-
