@@ -50,14 +50,27 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+/* static */ Type_McalMcu_eReasonReset McalMcu_eReasonReset = McalMcu_eReasonReset_OnPower; //TBD: Make static after integration
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 extern void Mcu_ReleaseIoBuffers(void);
 
+FUNC(Type_McalMcu_eReasonReset, MCALMCU_CODE) McalMcu_eGetReasonReset(void){
+   return McalMcu_eReasonReset;
+}
+
+Type_McalMcu_eReasonReset McalMcu_PerformReasonReset(void){
+   Type_McalMcu_eReasonReset ucRetVal = McalMcu_eReasonReset_Undefined;
+
+   McalMcu_eReasonReset = ucRetVal;
+
+   return ucRetVal;
+}
+
 FUNC(void, MCALMCU_CODE) infMcalMcuSwcApplEcuM_InitFunction(void){
-//   McalMcu_PerformReasonReset();
+   (void)McalMcu_PerformReasonReset();
    Mcu_ReleaseIoBuffers();
 }
 
