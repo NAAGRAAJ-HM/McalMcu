@@ -4,16 +4,16 @@
 #include "Platform_Types.hpp"
 
 #ifndef _GHS_PRAGMA_IO_TYPEDEF_
-  #define _GHS_PRAGMA_IO_TYPEDEF_
-  #define PRAGMA(x) _Pragma(#x)
-  #define __READ volatile const
-  #define __WRITE volatile
-  #define __READ_WRITE volatile
+#define _GHS_PRAGMA_IO_TYPEDEF_
+#define PRAGMA(x) _Pragma(#x)
+#define __READ volatile const
+#define __WRITE volatile
+#define __READ_WRITE volatile
 
-  #define __IOREG(reg, addr, attrib, type) PRAGMA(ghs io reg addr) \
+#define __IOREG(reg, addr, attrib, type) PRAGMA(ghs io reg addr) \
   extern attrib type reg;
 
-  #define __IOREGARRAY(reg, array, addr, attrib, type) PRAGMA(ghs io reg addr) \
+#define __IOREGARRAY(reg, array, addr, attrib, type) PRAGMA(ghs io reg addr) \
   extern attrib type reg[array];
 #endif
 

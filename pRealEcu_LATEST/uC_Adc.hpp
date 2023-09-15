@@ -24,7 +24,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "uC.h"
+#include "uC.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -81,64 +81,64 @@ typedef struct{                                            /* Module           *
     __type9 VCR26;                                         /* VCR26            */
     __type9 VCR27;                                         /* VCR27            */
     __type9 VCR28;                                         /* VCR28            */
-    uint8  dummy293[128];                                  /* Reserved         */
-    const __type9 PWDVCR;                                  /* PWDVCR           */
-    uint8  dummy294[8];                                    /* Reserved         */
-    const __type16 DR00;                                   /* DR00             */
-    const __type16 DR02;                                   /* DR02             */
-    const __type16 DR04;                                   /* DR04             */
-    const __type16 DR06;                                   /* DR06             */
-    const __type16 DR08;                                   /* DR08             */
-    const __type16 DR10;                                   /* DR10             */
-    const __type16 DR12;                                   /* DR12             */
-    const __type16 DR14;                                   /* DR14             */
-    const __type16 DR16;                                   /* DR16             */
-    const __type16 DR18;                                   /* DR18             */
-    const __type16 DR20;                                   /* DR20             */
-    const __type16 DR22;                                   /* DR22             */
-    const __type16 DR24;                                   /* DR24             */
-    const __type16 DR26;                                   /* DR26             */
-    const __type16 DR28;                                   /* DR28             */
-    uint8  dummy295[60];                                   /* Reserved         */
-    const __type16 PWDTSNDR;                               /* PWDTSNDR         */
-    uint8  dummy296[132];                                  /* Reserved         */
-    const uint32 DIR00;                                    /* DIR00            */
-    const uint32 DIR01;                                    /* DIR01            */
-    const uint32 DIR02;                                    /* DIR02            */
-    const uint32 DIR03;                                    /* DIR03            */
-    const uint32 DIR04;                                    /* DIR04            */
-    const uint32 DIR05;                                    /* DIR05            */
-    const uint32 DIR06;                                    /* DIR06            */
-    const uint32 DIR07;                                    /* DIR07            */
-    const uint32 DIR08;                                    /* DIR08            */
-    const uint32 DIR09;                                    /* DIR09            */
-    const uint32 DIR10;                                    /* DIR10            */
-    const uint32 DIR11;                                    /* DIR11            */
-    const uint32 DIR12;                                    /* DIR12            */
-    const uint32 DIR13;                                    /* DIR13            */
-    const uint32 DIR14;                                    /* DIR14            */
-    const uint32 DIR15;                                    /* DIR15            */
-    const uint32 DIR16;                                    /* DIR16            */
-    const uint32 DIR17;                                    /* DIR17            */
-    const uint32 DIR18;                                    /* DIR18            */
-    const uint32 DIR19;                                    /* DIR19            */
-    const uint32 DIR20;                                    /* DIR20            */
-    const uint32 DIR21;                                    /* DIR21            */
-    const uint32 DIR22;                                    /* DIR22            */
-    const uint32 DIR23;                                    /* DIR23            */
-    const uint32 DIR24;                                    /* DIR24            */
-    const uint32 DIR25;                                    /* DIR25            */
-    const uint32 DIR26;                                    /* DIR26            */
-    const uint32 DIR27;                                    /* DIR27            */
-    const uint32 DIR28;                                    /* DIR28            */
-    uint8  dummy297[128];                                  /* Reserved         */
-    const uint32 PWDDIR;                                   /* PWDDIR           */
-    uint8  dummy298[8];                                    /* Reserved         */
+   uint8  dummy293[128];                                  /* Reserved         */
+   const __type9 PWDVCR;                                  /* PWDVCR           */
+   uint8  dummy294[8];                                    /* Reserved         */
+   const __type16 DR00;                                   /* DR00             */
+   const __type16 DR02;                                   /* DR02             */
+   const __type16 DR04;                                   /* DR04             */
+   const __type16 DR06;                                   /* DR06             */
+   const __type16 DR08;                                   /* DR08             */
+   const __type16 DR10;                                   /* DR10             */
+   const __type16 DR12;                                   /* DR12             */
+   const __type16 DR14;                                   /* DR14             */
+   const __type16 DR16;                                   /* DR16             */
+   const __type16 DR18;                                   /* DR18             */
+   const __type16 DR20;                                   /* DR20             */
+   const __type16 DR22;                                   /* DR22             */
+   const __type16 DR24;                                   /* DR24             */
+   const __type16 DR26;                                   /* DR26             */
+   const __type16 DR28;                                   /* DR28             */
+   uint8  dummy295[60];                                   /* Reserved         */
+   const __type16 PWDTSNDR;                               /* PWDTSNDR         */
+   uint8  dummy296[132];                                  /* Reserved         */
+   const uint32 DIR00;                                    /* DIR00            */
+   const uint32 DIR01;                                    /* DIR01            */
+   const uint32 DIR02;                                    /* DIR02            */
+   const uint32 DIR03;                                    /* DIR03            */
+   const uint32 DIR04;                                    /* DIR04            */
+   const uint32 DIR05;                                    /* DIR05            */
+   const uint32 DIR06;                                    /* DIR06            */
+   const uint32 DIR07;                                    /* DIR07            */
+   const uint32 DIR08;                                    /* DIR08            */
+   const uint32 DIR09;                                    /* DIR09            */
+   const uint32 DIR10;                                    /* DIR10            */
+   const uint32 DIR11;                                    /* DIR11            */
+   const uint32 DIR12;                                    /* DIR12            */
+   const uint32 DIR13;                                    /* DIR13            */
+   const uint32 DIR14;                                    /* DIR14            */
+   const uint32 DIR15;                                    /* DIR15            */
+   const uint32 DIR16;                                    /* DIR16            */
+   const uint32 DIR17;                                    /* DIR17            */
+   const uint32 DIR18;                                    /* DIR18            */
+   const uint32 DIR19;                                    /* DIR19            */
+   const uint32 DIR20;                                    /* DIR20            */
+   const uint32 DIR21;                                    /* DIR21            */
+   const uint32 DIR22;                                    /* DIR22            */
+   const uint32 DIR23;                                    /* DIR23            */
+   const uint32 DIR24;                                    /* DIR24            */
+   const uint32 DIR25;                                    /* DIR25            */
+   const uint32 DIR26;                                    /* DIR26            */
+   const uint32 DIR27;                                    /* DIR27            */
+   const uint32 DIR28;                                    /* DIR28            */
+   uint8  dummy297[128];                                  /* Reserved         */
+   const uint32 PWDDIR;                                   /* PWDDIR           */
+   uint8  dummy298[8];                                    /* Reserved         */
     __type9 ADHALTR;                                       /* ADHALTR          */
     __type9 ADCR;                                          /* ADCR             */
-    const __type16 SGSTR;                                  /* SGSTR            */
-    const __type9 MPXCURR;                                 /* MPXCURR          */
-    uint8  dummy299[4];                                    /* Reserved         */
+   const __type16 SGSTR;                                  /* SGSTR            */
+   const __type9 MPXCURR;                                 /* MPXCURR          */
+   uint8  dummy299[4];                                    /* Reserved         */
     __type9 THSMPSTCR;                                     /* THSMPSTCR        */
     __type9 THCR;                                          /* THCR             */
     __type9 THAHLDSTCR;                                    /* THAHLDSTCR       */
@@ -152,48 +152,48 @@ typedef struct{                                            /* Module           *
     __type16 ULLMTBR1;                                     /* ULLMTBR1         */
     __type16 ULLMTBR2;                                     /* ULLMTBR2         */
     __type9 ECR;                                           /* ECR              */
-    const __type9 ULER;                                    /* ULER             */
-    const __type9 OWER;                                    /* OWER             */
+   const __type9 ULER;                                    /* ULER             */
+   const __type9 OWER;                                    /* OWER             */
     __type9 DGCTL0;                                        /* DGCTL0           */
     __type16 DGCTL1;                                       /* DGCTL1           */
     __type16 PDCTL1;                                       /* PDCTL1           */
     __type9 PDCTL2;                                        /* PDCTL2           */
-    uint8  dummy300[32];                                   /* Reserved         */
+   uint8  dummy300[32];                                   /* Reserved         */
     __type9 SMPCR;                                         /* SMPCR            */
-    uint8  dummy301[4];                                    /* Reserved         */
-    uint8  EMU;                                            /* EMU              */
-    uint8  dummy302[183];                                  /* Reserved         */
+   uint8  dummy301[4];                                    /* Reserved         */
+   uint8  EMU;                                            /* EMU              */
+   uint8  dummy302[183];                                  /* Reserved         */
     __type9 SGSTCR1;                                       /* SGSTCR1          */
-    uint8  dummy303[4];                                    /* Reserved         */
+   uint8  dummy303[4];                                    /* Reserved         */
     __type9 SGCR1;                                         /* SGCR1            */
     __type9 SGVCSP1;                                       /* SGVCSP1          */
     __type9 SGVCEP1;                                       /* SGVCEP1          */
     __type9 SGMCYCR1;                                      /* SGMCYCR1         */
     __type9 SGSEFCR1;                                      /* SGSEFCR1         */
     __type16 SGTSEL1;                                      /* SGTSEL1          */
-    uint8  dummy304[32];                                   /* Reserved         */
+   uint8  dummy304[32];                                   /* Reserved         */
     __type9 SGSTCR2;                                       /* SGSTCR2          */
-    uint8  dummy305[4];                                    /* Reserved         */
+   uint8  dummy305[4];                                    /* Reserved         */
     __type9 SGCR2;                                         /* SGCR2            */
     __type9 SGVCSP2;                                       /* SGVCSP2          */
     __type9 SGVCEP2;                                       /* SGVCEP2          */
     __type9 SGMCYCR2;                                      /* SGMCYCR2         */
     __type9 SGSEFCR2;                                      /* SGSEFCR2         */
     __type16 SGTSEL2;                                      /* SGTSEL2          */
-    uint8  dummy306[32];                                   /* Reserved         */
+   uint8  dummy306[32];                                   /* Reserved         */
     __type9 SGSTCR3;                                       /* SGSTCR3          */
-    uint8  dummy307[4];                                    /* Reserved         */
+   uint8  dummy307[4];                                    /* Reserved         */
     __type9 SGCR3;                                         /* SGCR3            */
     __type9 SGVCSP3;                                       /* SGVCSP3          */
     __type9 SGVCEP3;                                       /* SGVCEP3          */
     __type9 SGMCYCR3;                                      /* SGMCYCR3         */
     __type9 SGSEFCR3;                                      /* SGSEFCR3         */
     __type16 SGTSEL3;                                      /* SGTSEL3          */
-    uint8  dummy308[40];                                   /* Reserved         */
+   uint8  dummy308[40];                                   /* Reserved         */
     __type9 PWDSGCR;                                       /* PWDSGCR          */
-    uint8  dummy309[12];                                   /* Reserved         */
+   uint8  dummy309[12];                                   /* Reserved         */
     __type9 PWDSGSEFCR;                                    /* PWDSGSEFCR       */
-} __type45;
+}__type45;
 
 __IOREG(APM0,  0xFFC103C8, __READ_WRITE, uint16);
 __IOREG(ADCA0, 0xFFF20000, __READ_WRITE, __type45);
