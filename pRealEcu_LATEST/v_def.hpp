@@ -1,4 +1,4 @@
-#ifndef  V_DEF_H
+#ifndef V_DEF_H
 #define V_DEF_H
 
 #include "FblHal_Cfg.hpp"
