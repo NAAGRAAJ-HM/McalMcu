@@ -40,7 +40,7 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-#ifndef ReSim
+#if(CfgProject_dSwitchReSim != STD_ON)
 __IOREG(P0,     0xFFC10000, __READ_WRITE, uint16);
 __IOREG(P8,     0xFFC10020, __READ_WRITE, uint16);
 __IOREG(P9,     0xFFC10024, __READ_WRITE, uint16);

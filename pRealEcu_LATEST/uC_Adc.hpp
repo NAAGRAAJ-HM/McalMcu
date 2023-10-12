@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : uC_Adc.h                                                          */
+/* File   : uC_Adc.hpp                                                        */
 /*                                                                            */
 /* Author : Raajnaag HULIYAPURADA MATA                                        */
 /*                                                                            */
@@ -50,7 +50,7 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-#ifndef ReSim
+#if(CfgProject_dSwitchReSim != STD_ON)
 typedef struct{                                            /* Module           */
     __type9 VCR00;                                         /* VCR00            */
     __type9 VCR01;                                         /* VCR01            */
