@@ -26,10 +26,10 @@
 #include "Std_Types.hpp"
 
 #include "infMcalMcuSwcApplEcuM.hpp"
-#include "infSwcApplEcuMMcalMcu.hpp"
 
 #include "CfgMcalMcu.hpp"
 #include "uC_Mcu.hpp"
+#include "SysManagerX.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -54,21 +54,21 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-Type_McalMcu_eResetReason  McalMcu_eResetReason  = McalMcu_eResetReason_OnPower;
-Type_McalMcu_eResetRequest McalMcu_eResetRequest = McalMcu_eResetRequest_General;
+/* static */ Type_McalMcu_eReasonReset McalMcu_eReasonReset = McalMcu_eReasonReset_OnPower; //TBD: Make static after integration
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 extern void ApplMcu_vReleaseIoBuffers      (void);
+extern void SYSMGR_SetEcuMode              (eEcuModesType ucMode);
 extern void DCMMGR_TriggerPositiveResponse (void);
 
-FUNC(Type_McalMcu_eResetReason,  MCALMCU_CODE) McalMcu_eGetResetReason    (void)                                     {return McalMcu_eResetReason;}
-FUNC(Type_McalMcu_eResetRequest, MCALMCU_CODE) McalMcu_eGetResetRequest   (void)                                     {return McalMcu_eResetRequest;}
-FUNC(void,                       MCALMCU_CODE) McalMcu_vPlaceResetRequest (Type_McalMcu_eResetRequest leResetRequest){       McalMcu_eResetRequest = leResetRequest;}
+FUNC(Type_McalMcu_eReasonReset, MCALMCU_CODE) McalMcu_eGetReasonReset(void){
+   return McalMcu_eReasonReset;
+}
 
-Type_McalMcu_eResetReason McalMcu_PerformReasonReset(void){
-   Type_McalMcu_eResetReason leResetReason = McalMcu_eResetReason_Undefined;
+Type_McalMcu_eReasonReset McalMcu_PerformReasonReset(void){
+   Type_McalMcu_eReasonReset ucRetVal = McalMcu_eReasonReset_Undefined;
    if(
          0
       != (
@@ -81,46 +81,46 @@ Type_McalMcu_eResetReason McalMcu_PerformReasonReset(void){
                )
          )
    ){
-      leResetReason = McalMcu_eResetReason_WakeupTimer;
-      infSwcApplEcuMMcalMcu_vSetModeEcu(SwcServiceEcuM_eModeEcu_Wake);
+      ucRetVal = McalMcu_eReasonReset_WakeupTimer;
+      SYSMGR_SetEcuMode(cECUMODE_WAKE);
    }
    else if(
           CFGMCALMCU_WUP_FACTOR_TJA_ERR
       == (CFGMCALMCU_WUP_FACTOR_TJA_ERR & WUF0)
    ){
-      leResetReason = McalMcu_eResetReason_WakeupCan;
-      infSwcApplEcuMMcalMcu_vSetModeEcu(SwcServiceEcuM_eModeEcu_Quiet);
+      ucRetVal = McalMcu_eReasonReset_WakeupCan;
+      SYSMGR_SetEcuMode(cECUMODE_QUIET);
    }
    else if(
           0x0001
       == (0x0001 & RESF)
    ){
-      leResetReason = McalMcu_eResetReason_Sw;
+      ucRetVal = McalMcu_eReasonReset_Sw;
 #ifndef IGNORE_POS_RESP_ON_STARTUP
       DCMMGR_TriggerPositiveResponse();
 #endif
-      infSwcApplEcuMMcalMcu_vSetModeEcu(SwcServiceEcuM_eModeEcu_Quiet);
+      SYSMGR_SetEcuMode(cECUMODE_QUIET);
    }
    else if(
          0
       != (0x0006 & RESF)
    ){
-      leResetReason = McalMcu_eResetReason_Wdg;
-      infSwcApplEcuMMcalMcu_vSetModeEcu(SwcServiceEcuM_eModeEcu_Quiet);
+      ucRetVal = McalMcu_eReasonReset_Wdg;
+      SYSMGR_SetEcuMode(cECUMODE_QUIET);
    }
    else if(
           CFGMCALMCU_RESF_POWER_ON_RESET
       == (CFGMCALMCU_RESF_POWER_ON_RESET & RESFR)
    ){
-      leResetReason = McalMcu_eResetReason_OnPower;
-      infSwcApplEcuMMcalMcu_vSetModeEcu(SwcServiceEcuM_eModeEcu_Quiet);
+      ucRetVal = McalMcu_eReasonReset_OnPower;
+      SYSMGR_SetEcuMode(cECUMODE_QUIET);
    }
    else{
    }
    RESFC  = 0x000007ffu;
    RESFCR = 0x000007ffu;
-   McalMcu_eResetReason = leResetReason;
-   return leResetReason;
+   McalMcu_eReasonReset = ucRetVal;
+   return ucRetVal;
 }
 
 FUNC(void, MCALMCU_CODE) infMcalMcuSwcApplEcuM_InitFunction(void){

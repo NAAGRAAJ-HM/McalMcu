@@ -31,7 +31,7 @@
 #define L                                                                      0
 #define H                                                                      1
 
-#if(CfgProject_dSwitchReSim != STD_ON)
+#ifndef ReSim
 #ifndef _GHS_PRAGMA_IO_TYPEDEF_
 #define _GHS_PRAGMA_IO_TYPEDEF_
 #define PRAGMA(x) _Pragma(#x)
@@ -81,21 +81,6 @@ typedef union{                                            /* IOR              */
    uint32 UINT32;                                         /* 32-bit Access    */
    uint16 UINT16[2];                                      /* 16-bit Access    */
 }__type16;
-
-typedef struct{
-         uint32 CMP;
-   const uint32 CNT;
-         uint8  dummy284[8];
-   const uint8  TE;
-         uint8  dummy285[3];
-         uint8  TS;
-         uint8  dummy286[3];
-         uint8  TT;
-         uint8  dummy287[7];
-         uint8  CTL;
-         uint8  dummy288[3];
-         uint8  EMU;
-}__type43;
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
