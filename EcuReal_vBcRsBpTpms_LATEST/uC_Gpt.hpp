@@ -37,7 +37,7 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-#ifndef ReSim
+#ifndef CfgProject_dSwitchReSim
 __IOREG(PROTCMD0,     0xFFF80000, __READ_WRITE, uint32);
 __IOREG(PROTS0,     0xFFF80004, __READ,     uint32);
 __IOREG(MOSCE,     0xFFF81100, __READ_WRITE, uint32);

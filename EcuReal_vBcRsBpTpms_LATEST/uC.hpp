@@ -31,7 +31,7 @@
 #define L                                                                      0
 #define H                                                                      1
 
-#ifndef ReSim
+#ifndef CfgProject_dSwitchReSim
 #ifndef _GHS_PRAGMA_IO_TYPEDEF_
 #define _GHS_PRAGMA_IO_TYPEDEF_
 #define PRAGMA(x) _Pragma(#x)
