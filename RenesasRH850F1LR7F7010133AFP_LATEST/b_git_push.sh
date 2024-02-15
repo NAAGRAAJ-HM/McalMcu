@@ -1,4 +1,4 @@
 git add .
 git status
-git commit -m "AUTOSAR Migration Activities - EcuReal_vBcRsBpTpms_LATEST - McalMcu"
+git commit -m "AUTOSAR Migration Activities - rEcu_vBcRsBpTpms_LATEST - McalMcu"
 git push
