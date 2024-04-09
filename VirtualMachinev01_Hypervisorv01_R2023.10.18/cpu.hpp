@@ -396,8 +396,7 @@ typedef union {
 #define MPUA15      29, 7
 #define MPAT15      30, 7
 
-_INLINE_ void SET_PSW_USERMODE( void)
-{
+_INLINE_ void SET_PSW_USERMODE( void){
    PSW_T p;
     p.psw= __STSR( PSW);
     p.UM= 1;
@@ -405,8 +404,7 @@ _INLINE_ void SET_PSW_USERMODE( void)
     __SYNCI();
 }
 
-_INLINE_ void SET_PSW_SVMODE( void)
-{
+_INLINE_ void SET_PSW_SVMODE( void){
    PSW_T p;
     p.psw= __STSR( PSW);
     p.UM= 0;
@@ -414,8 +412,7 @@ _INLINE_ void SET_PSW_SVMODE( void)
     __SYNCI();
 }
 
-_INLINE_ void SET_MCFG0_SPID( u32_T v)
-{
+_INLINE_ void SET_MCFG0_SPID( u32_T v){
     MCFG0_T p;
     p.mcfg0= __STSR( MCFG0);
     p.SPID= v;
@@ -423,8 +420,7 @@ _INLINE_ void SET_MCFG0_SPID( u32_T v)
     __SYNCI();
 }
 
-_INLINE_ void SET_SCCFG( u32_T emax)
-{
+_INLINE_ void SET_SCCFG( u32_T emax){
     SCCFG_T p;
     p.sccfg= __STSR( SCCFG);
     p.SIZE= emax;
@@ -552,8 +548,7 @@ _INLINE_ u32_T GET_MPLA15(void )   { return __STSR( MPLA15); }
 _INLINE_ u32_T GET_MPUA15(void )   { return __STSR( MPUA15); }
 _INLINE_ u32_T GET_MPAT15(void )   { return __STSR( MPAT15); }
 
-_INLINE_ void SET_PSW_EBV( void)
-{
+_INLINE_ void SET_PSW_EBV( void){
    PSW_T p;
     __DI() ;
     p.psw= __STSR( PSW);
@@ -561,8 +556,7 @@ _INLINE_ void SET_PSW_EBV( void)
     __LDSR( PSW, p.psw);
 }
 
-_INLINE_ void SET_MCTL_MA( u32_T v)
-{
+_INLINE_ void SET_MCTL_MA( u32_T v){
     MCTL_T p;
     p.mctl= __STSR( MCTL);
     p.MA=!!v;
@@ -570,8 +564,7 @@ _INLINE_ void SET_MCTL_MA( u32_T v)
     __SYNCP();
 }
 
-_INLINE_ void SET_MCTL_UIC( u32_T v)
-{
+_INLINE_ void SET_MCTL_UIC( u32_T v){
     MCTL_T p;
     p.mctl= __STSR( MCTL);
     p.UIC=!!v;
@@ -579,43 +572,37 @@ _INLINE_ void SET_MCTL_UIC( u32_T v)
     __SYNCP();
 }
 
-_INLINE_ void SET_EBASE( u32_T v)
-{
+_INLINE_ void SET_EBASE( u32_T v){
    u32_T __t=__DIR();
     __LDSR( EBASE, v);
     __RIR( __t);
 }
 
-_INLINE_ void SET_INTBP( u32_T v)
-{
+_INLINE_ void SET_INTBP( u32_T v){
    u32_T __t=__DIR();
     __LDSR( INTBP, v);
     __RIR( __t);
 }
 
-_INLINE_ void SET_ISPR(u32_T v)
-{
+_INLINE_ void SET_ISPR(u32_T v){
    u32_T __t=__DIR();
     __LDSR( ISPR, v);
     __RIR( __t);
 }
 
-_INLINE_ void SET_PMR(u32_T v)
-{
+_INLINE_ void SET_PMR(u32_T v){
    u32_T __t=__DIR();
     __LDSR( PMR, v);
     __RIR( __t);
 }
 
-_INLINE_ void SET_ICSR( u32_T v)
-{
+_INLINE_ void SET_ICSR( u32_T v){
    u32_T __t=__DIR();
     __LDSR( ICSR, v);
     __RIR( __t);
 }
 
-_INLINE_ void SET_INTCFG( u32_T v)
-{
+_INLINE_ void SET_INTCFG( u32_T v){
    u32_T __t=__DIR();
     __LDSR( INTCFG, v);
     __RIR( __t);
@@ -647,8 +634,7 @@ _INLINE_ void SET_FPCC(u32_T v) { __LDSR( FPCC ,v); __SYNCP();}
 _INLINE_ void SET_FPCF(u32_T v) { __LDSR( FPCFG,v); __SYNCP();}
 _INLINE_ void SET_FPEC(u32_T v) { __LDSR( FPEC ,v); __SYNCP();}
 
-_INLINE_ void SET_PSW_ENABLEFPU( void)
-{
+_INLINE_ void SET_PSW_ENABLEFPU( void){
    PSW_T p;
     p.psw= __STSR( PSW);
     p.CU0= 1;
@@ -656,8 +642,7 @@ _INLINE_ void SET_PSW_ENABLEFPU( void)
     __SYNCI();
 }
 
-_INLINE_ void SET_FPSR_PEM( void)
-{
+_INLINE_ void SET_FPSR_PEM( void){
     FPSR_T p;
     __SYNCP();
     p.fpsr= __STSR( FPSR);
